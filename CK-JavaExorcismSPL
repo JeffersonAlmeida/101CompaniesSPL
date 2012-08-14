@@ -1,0 +1,35 @@
+Feature: Tree structure 
+
+	org.softlang.company (Full Package)
+	org.softlang.company.factory  (Full Package)
+	org.softlang.company.impl.bean (Full Package)
+	org.softlang.company.impl.pojo (Full Package)
+	
+
+Feature: Type-driven query 
+Feature: Type-driven transformation 
+	
+	org.softlang.command (Full Package)
+	org.softlang.template.Walker.java
+	org.softlang.company.Employee.java  (mandatory code)
+	org.softlang.features.OrderedCut.java
+	org.softlang.features.SimpleCut.java
+	org.softlang.features.TotalReducer.java
+	org.softlang.features.TotalWalker.java
+	
+	org.softlang.template.Reducer.java
+	org.softlang.template.Walker.java
+	
+	org.softlang.visitor  (Full Package)
+	
+	org.softlang.util.Monoid.java
+	
+Feature: Logging 
+
+	org.softlang.features.Logging.java
+	org.softlang.company.impl.bean.EmployeeImpl.java
+
+Feature: Access control
+	org.softlang.proxy (Full Package)
+
+	
