@@ -44,3 +44,4 @@ Monoid => org/softlang/util/Monoid.java;
 AddDoubles => org/softlang/util/AddDoubles.java;
 MaxDoubles => org/softlang/util/MaxDoubles.java;
 Walker => org/softlang/template/Walker.java;
+Precedence => org/softlang/features/Precedence.java; 
