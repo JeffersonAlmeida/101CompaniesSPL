@@ -1,4 +1,5 @@
-Feature: Tree structure 
+JavaExorcismSPL
+Feature: TreeStructure 
 
 	org.softlang.company (Full Package)
 	org.softlang.company.factory  (Full Package)
@@ -6,8 +7,8 @@ Feature: Tree structure
 	org.softlang.company.impl.pojo (Full Package)
 	
 
-Feature: Type-driven query 
-Feature: Type-driven transformation 
+Feature: TypeDrivenQuery 
+Feature: TypeDrivenTransformation 
 	
 	org.softlang.command (Full Package)
 	org.softlang.template.Walker.java
@@ -24,12 +25,15 @@ Feature: Type-driven transformation
 	
 	org.softlang.util.Monoid.java
 	
+	org.softlang.util.AddDouble.java
+	org.softlang.util.MaxDouble.java
+	
 Feature: Logging 
 
 	org.softlang.features.Logging.java
 	org.softlang.company.impl.bean.EmployeeImpl.java
 
-Feature: Access control
+Feature: AccessControl
 	org.softlang.proxy (Full Package)
 
 	
