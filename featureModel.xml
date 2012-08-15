@@ -4,4 +4,5 @@
     <feature min="0" max="1" name="TypeDrivenTransformation" type="NONE" id="TypeDrivenTransformation"></feature>
     <feature min="0" max="1" name="Logging" type="NONE" id="Logging"></feature>
     <feature min="0" max="1" name="AccessControl" type="NONE" id="AccessControl"></feature>
+	 <feature min="0" max="1" name="Testes" type="NONE" id="Testes"></feature>
 </feature>

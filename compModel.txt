@@ -45,3 +45,7 @@ AddDoubles => org/softlang/util/AddDoubles.java;
 MaxDoubles => org/softlang/util/MaxDoubles.java;
 Walker => org/softlang/template/Walker.java;
 Precedence => org/softlang/features/Precedence.java; 
+Basics => org/softlang/tests/Basics.java;
+Observability => org/softlang/tests/Observability.java;
+Proxying => org/softlang/tests/Proxying.java;
+Undo => org/softlang/tests/Undo.java;
