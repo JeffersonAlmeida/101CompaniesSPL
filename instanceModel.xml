@@ -1,4 +1,5 @@
 <feature name="JavaExorcismSPL" type="NONE" id="JavaExorcismSPL">
 	<feature name="TreeStructure" type="NONE" id="TreeStructure"></feature>	   
 	<feature name="Logging" type="NONE" id="Logging"></feature>	   
+	<feature name="AccessControl" type="NONE" id="AccessControl"></feature>	   
 </feature>
