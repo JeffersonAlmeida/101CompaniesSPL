@@ -5,7 +5,13 @@ Feature: TreeStructure
 	org.softlang.company.factory  (Full Package)
 	org.softlang.company.impl.bean (Full Package)
 	org.softlang.company.impl.pojo (Full Package)
+	org.softlang.visitor (Full Package)
 	
+	org.softlang.util.ObservableSimpleList
+	org.softlang.util.SimpleList
+	org.softlang.util.AddToList
+	org.softlang.util.ChangeList
+	org.softlang.util.RemoveFromList
 
 Feature: TypeDrivenQuery 
 Feature: TypeDrivenTransformation 
