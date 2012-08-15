@@ -25,3 +25,4 @@ SimpleList => org/softlang/util/SimpleList.java;
 AddToList => org/softlang/util/AddToList.java;
 ChangeList => org/softlang/util/ChangeList.java;
 RemoveFromList => org/softlang/util/RemoveFromList.java;
+Logging => org/softlang/features/Logging.java;

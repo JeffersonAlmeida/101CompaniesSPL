@@ -18,7 +18,9 @@ Feature: TypeDrivenTransformation
 	
 	org.softlang.command (Full Package)
 	org.softlang.template.Walker.java
+	
 	org.softlang.company.Employee.java  (mandatory code)
+	
 	org.softlang.features.OrderedCut.java
 	org.softlang.features.SimpleCut.java
 	org.softlang.features.TotalReducer.java
