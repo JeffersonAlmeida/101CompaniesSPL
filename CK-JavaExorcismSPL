@@ -29,7 +29,7 @@ Feature: TypeDrivenTransformation
 	org.softlang.template.Reducer.java
 	org.softlang.template.Walker.java
 	
-	org.softlang.visitor  (Full Package)
+	org.softlang.visitor  (mandatory code)
 	
 	org.softlang.util.Monoid.java
 	
