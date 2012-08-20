@@ -16,8 +16,10 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 
 	public void setName(String name) {
 		this.name = name;
+		 /*#if($Logging)*/
 		setChanged();
 		notifyObservers("name");
+		/*#end*/
 	}
 
 	public String getAddress() {
@@ -26,8 +28,10 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 
 	public void setAddress(String address) {
 		this.address = address;
+		 /*#if($Logging)*/
 		setChanged();
 		notifyObservers("address");
+	    /*#end*/
 	}
 
 	public double getSalary() {
@@ -36,7 +40,7 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 
 	public void setSalary(double salary) {
 		this.salary = salary;
-	    //#if($Logging)
+	    /*#if($Logging)*/
  		setChanged();
  		notifyObservers("salary");
 	    /*#end*/
@@ -48,8 +52,10 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 
 	public void setManager(boolean manager) {
 		this.manager = manager;
+		 /*#if($Logging)*/
 		setChanged();
 		notifyObservers("manager");
+		/*#end*/
 	}
 
 	public void accept(VoidVisitor v) {
