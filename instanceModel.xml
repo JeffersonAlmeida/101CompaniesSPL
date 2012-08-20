@@ -3,5 +3,11 @@
 	<feature name="Logging" type="NONE" id="Logging"></feature>	   
 	<feature name="AccessControl" type="NONE" id="AccessControl"></feature>	   
 	<feature name="TypeDrivenTransformation" type="NONE" id="TypeDrivenTransformation"></feature>
-<feature name="Testes" type="NONE" id="Testes"></feature>	
+	<feature name="Testes" type="NONE" id="Testes"></feature>	
+	
+	<feature name="SimpleCut" type="NONE" id="SimpleCut"></feature>
+	<feature name="CommandCut" type="NONE" id="CommandCut"></feature>
+	<feature name="OrderedCut" type="NONE" id="OrderedCut"></feature>
+	<feature name="Precedence" type="NONE" id="Precedence"></feature>
+	
 </feature>
