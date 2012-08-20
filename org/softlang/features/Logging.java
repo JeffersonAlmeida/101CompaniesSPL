@@ -13,6 +13,7 @@ public class Logging implements Observer {
 
 	private int size;
 	
+	
 	public void update(Observable o, Object arg) {
 		if (o instanceof EmployeeImpl && arg instanceof String) {
 			EmployeeImpl e = (EmployeeImpl)o;

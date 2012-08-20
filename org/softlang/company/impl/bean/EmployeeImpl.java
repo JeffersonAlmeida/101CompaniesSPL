@@ -36,8 +36,10 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 
 	public void setSalary(double salary) {
 		this.salary = salary;
-		setChanged();
-		notifyObservers("salary");
+	     //#if($Logging)
+		 		setChanged();
+		 		notifyObservers("salary");
+	     //#end
 	}	
 	
 	public boolean getManager() {

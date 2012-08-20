@@ -18,6 +18,7 @@ public class Observability {
 		sampleCompany = (CompanyImpl)Basics.createSampleCompany(new BeanFactory());
 	}
 
+	
 	/**
 	 * Test Logging feature
 	 */

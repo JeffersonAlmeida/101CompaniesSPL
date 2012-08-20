@@ -13,7 +13,7 @@ Feature: TreeStructure
 	org.softlang.util.ChangeList
 	org.softlang.util.RemoveFromList
 
-Feature: TypeDrivenQuery 
+Feature: TypeDrivenQuery  
 Feature: TypeDrivenTransformation 
 	
 	org.softlang.command (Full Package)
