@@ -42,6 +42,26 @@ Feature: Logging
 	org.softlang.company.impl.bean.EmployeeImpl.java
 
 Feature: AccessControl
+
 	org.softlang.proxy (Full Package)
+	
+
+Feature: SimpleCut
+
+	org.softlang.features.SimpleCut.java
+
+Feature: CommandCut
+
+	org.softlang.command.Command.java
+	org.softlang.command.CutCompany.java
+	org.softlang.command.CutEmployee.java
+
+Feature: OrderedCut
+
+	org.softlang.features.OrderedCut
+	
+Feature: Precedence
+	
+	org.softlang.features.Precedence
 
 	
