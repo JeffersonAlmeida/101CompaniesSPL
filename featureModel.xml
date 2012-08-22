@@ -6,7 +6,7 @@
     <feature min="0" max="1" name="AccessControl" type="NONE" id="AccessControl"></feature>
 	<feature min="0" max="1" name="Testes" type="NONE" id="Testes"></feature>
 	
-	
+	<feature min="0" max="1" name="Cut" type="NONE" id="Cut"></feature>
 	<feature min="0" max="1" name="SimpleCut" type="NONE" id="SimpleCut"></feature>
 	<feature min="0" max="1" name="CommandCut" type="NONE" id="CommandCut"></feature>
 	<feature min="0" max="1" name="OrderedCut" type="NONE" id="OrderedCut"></feature>

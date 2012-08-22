@@ -5,6 +5,7 @@
 	<feature name="TypeDrivenTransformation" type="NONE" id="TypeDrivenTransformation"></feature>
 	<feature name="Testes" type="NONE" id="Testes"></feature>	
 	
+	<feature name="Cut" type="NONE" id="Cut"></feature>
 	<feature name="SimpleCut" type="NONE" id="SimpleCut"></feature>
 	<feature name="CommandCut" type="NONE" id="CommandCut"></feature>
 	<feature name="OrderedCut" type="NONE" id="OrderedCut"></feature>

@@ -45,6 +45,10 @@ Feature: AccessControl
 
 	org.softlang.proxy (Full Package)
 	
+Feature: Cut
+	
+	org.softlang.template.Walker.java
+ 	org.softlang.visitor.VoidVisitor.java
 
 Feature: SimpleCut
 
@@ -63,5 +67,8 @@ Feature: OrderedCut
 Feature: Precedence
 	
 	org.softlang.features.Precedence
+	
+Feature: Total
+		org.softlang.features.TotalWalker
 
 	
