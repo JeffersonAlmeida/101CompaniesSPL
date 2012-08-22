@@ -6,4 +6,8 @@
 	<feature name="SimpleCut" type="NONE" id="SimpleCut"></feature>
 	<feature name="requestCut" type="NONE" id="requestCut"></feature>
 	<feature name="CommandCut" type="NONE" id="CommandCut"></feature>	
+	
+	<feature name="TotalWalker" type="NONE" id="TotalWalker"></feature>	
+	<feature name="TotalReducer" type="NONE" id="TotalReducer"></feature>	
+	
 </feature>

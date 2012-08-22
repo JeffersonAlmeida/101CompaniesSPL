@@ -70,5 +70,9 @@ Feature: Precedence
 	
 Feature: Total
 		org.softlang.features.TotalWalker
+		
+Feature: TotalWalker
+
+Feature: TotalReducer		
 
 	
