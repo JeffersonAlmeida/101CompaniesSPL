@@ -1,0 +1,19 @@
+Os únicos assets "observadores" fazem parte das features Logging e Precedence.
+	Portanto, todo o código das classes observáveis relacionado com notificação, adicionar e remover observadores serão marcados com CC.
+	Ou seja, estes códigos apenas farão parte do produto se Logging ou precedence forem selecionadas.
+	
+	Observáveis
+	
+	pacote Bean
+	
+		ComponentImpl ok
+		ConteinerImpl ok
+		CompanyImpl ok
+		DepartamentImpl ok
+		EmployeeImpl ok
+	
+	
+	* ObservableSimpleList 
+		A variabilidade pode ser definida a nível de CK, pois neste caso a classe
+		representa uma lista de objetos observáveis e isso só faz sentido se existir alguém pra observar (Logging and Precedence).
+			Obs: Essa classe depende de SimpleList. Portanto, também deve ser incluida quando as features Logging e Precedence forem verdadeiras.

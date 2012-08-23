@@ -35,3 +35,6 @@
 
 
 <feature name="Logging" type="NONE" id="Logging"></feature>	   
+
+
+/*#if($Logging || $Cut || $Total)*/ /* implements Serializable*/

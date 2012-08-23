@@ -15,8 +15,10 @@ public abstract class ComponentImpl extends Observable implements Component {
 	}
 	public void setName(String name) { 
 		this.name = name; 
+		/*#if($Logging || $Precedence)*/
 		setChanged();
 		notifyObservers("name");		
+		/*#end*/
 	}
 	public ComponentImpl getParent() { return parent; }
 	/* package */ void setParent(ComponentImpl parent) { this.parent = parent; }

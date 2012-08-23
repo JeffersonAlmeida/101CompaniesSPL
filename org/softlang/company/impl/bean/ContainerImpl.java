@@ -7,9 +7,9 @@ import java.util.Observer;
 
 public abstract class ContainerImpl extends ComponentImpl implements Container {
 
-	private ObservableSimpleList<Subunit> subunits = 
-		new ObservableSimpleList<Subunit>(
-				new SimpleLinkedList<Subunit>());
+	/*#if($Logging || $Precedence)*/
+	private ObservableSimpleList<Subunit> subunits =  new ObservableSimpleList<Subunit>(new SimpleLinkedList<Subunit>());
+	/*#end*/
 	
 	public Iterable<? extends Subunit> subunits() {
 		return subunits;
@@ -29,18 +29,25 @@ public abstract class ContainerImpl extends ComponentImpl implements Container {
 		return subunits.remove(u);
 	}
 	
+	
+	/*#if($Logging || $Precedence)*/
 	public void addObserver(Observer o) {
 		super.addObserver(o);
 		subunits.addObserver(o);
 	}
+	/*#end*/
 	
+	/*#if($Logging || $Precedence)*/
 	public void deleteObserver(Observer o) {
 		super.deleteObserver(o);
 		subunits.deleteObserver(o);		
 	}
+	/*#end*/
 	
+	/*#if($Logging || $Precedence)*/
 	public void deleteObservers() {
 		super.deleteObservers();
 		subunits.deleteObservers();
-	}			
+	}	
+	/*#end*/
 }

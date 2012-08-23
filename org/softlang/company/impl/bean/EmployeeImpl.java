@@ -16,7 +16,7 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 
 	public void setName(String name) {
 		this.name = name;
-		 /*#if($Logging)*/
+		/*#if($Logging || $Precedence)*/
 		setChanged();
 		notifyObservers("name");
 		/*#end*/
@@ -28,7 +28,7 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 
 	public void setAddress(String address) {
 		this.address = address;
-		 /*#if($Logging)*/
+		/*#if($Logging || $Precedence)*/
 		setChanged();
 		notifyObservers("address");
 	    /*#end*/
@@ -40,7 +40,7 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 
 	public void setSalary(double salary) {
 		this.salary = salary;
-	    /*#if($Logging || $Precedence)*/
+		/*#if($Logging || $Precedence)*/
  		setChanged();
  		notifyObservers("salary");
 	    /*#end*/
@@ -52,7 +52,7 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 
 	public void setManager(boolean manager) {
 		this.manager = manager;
-		 /*#if($Logging)*/
+		/*#if($Logging || $Precedence)*/
 		setChanged();
 		notifyObservers("manager");
 		/*#end*/

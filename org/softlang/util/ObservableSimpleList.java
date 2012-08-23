@@ -27,14 +27,14 @@ public class ObservableSimpleList<X> extends Observable implements SimpleList<X>
 		for (X e : this)
 			if (e instanceof Observable)
 				((Observable)e).addObserver(o);
-	}
+	}	
 	
 	public void deleteObserver(Observer o) {
 		super.deleteObserver(o);
 		for (X e : this)
 			if (e instanceof Observable)
 				((Observable)e).deleteObserver(o);
-	}
+	}	
 	
 	public void deleteObservers() {
 		super.deleteObservers();
@@ -52,7 +52,7 @@ public class ObservableSimpleList<X> extends Observable implements SimpleList<X>
 	public Iterator<X> iterator() {
 		return inner.iterator();
 	}
-		
+	
 	public boolean add(X e) {
 		boolean result = inner.add(e);
 		if (result) {
