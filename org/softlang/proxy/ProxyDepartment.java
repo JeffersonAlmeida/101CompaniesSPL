@@ -16,15 +16,19 @@ import org.softlang.visitor.*;
 	private AccessControl context;
 	private Department subject;
 	
+	/*#if($GUI)*/
 	private List<Department> subdepts;
 	private List<Employee> employees;
 	private DefaultMutableTreeNode treeNode;
+	/*#end*/
 	
+	/*#if($GUI)*/
 	public ProxyDepartment() {
 		super();
 		subdepts = new LinkedList<Department>();
 		employees = new LinkedList<Employee>();
-	}	
+	}
+	/*#end*/
 	
 	/* package */ ProxyDepartment(AccessControl context, Department subject) {
 		this.context = context;
@@ -43,6 +47,7 @@ import org.softlang.visitor.*;
 		return subject.subunits();
 	}
 
+	/*#if($GUI)*/
 	public boolean add(Subunit u) {
 		if(u instanceof Department){
 			u = context.deploy(u);
@@ -52,57 +57,52 @@ import org.softlang.visitor.*;
 		}
 		return false;
 	}
+	/*#end*/
 	
+	/*#if(!$GUI)*/
 	/*public boolean add(Subunit u) {
 		u = context.deploy(u);
 		return subject.add(u);
 	}*/
-
+	/*#end*/
+	
 	public boolean remove(Subunit u) {
 		return subject.remove(u);
 	}
-
 	public Employee getManager() {
 		return subject.getManager();
 	}		
-	
 	// Delegation is NOT appropriate here.
 	public void accept(VoidVisitor v) {
 		v.visit(this);
 	}
-
 	// Delegation is NOT appropriate here.
 	public <R> R accept(ReturningVisitor<R> v) {
 		return v.visit(this);
 	}
+	
+	
+	
 
 	/*#if($GUI)*/
-	/*#end*/
 	public void setSubdepts(List<Department> subdepts) {
 		this.subdepts = subdepts;
 	}
-
 	public void setEmployees(List<Employee> employees) {
 		this.employees = employees;
 	}
-
 	public List<Department> getSubdepts() {
 		return subdepts;
 	}
-
 	public List<Employee> getEmployees() {
 		return employees;
 	}
-
 	public void setTreeNode(DefaultMutableTreeNode treeNode) {
 		this.treeNode = treeNode;
 	}
-
 	public DefaultMutableTreeNode getTreeNode() {
 		return treeNode;
 	}
-	
-	/*#if($GUI)*/
 	/**
 	 * This method returns the name for the tree-view.
 	 */

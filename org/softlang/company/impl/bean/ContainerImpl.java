@@ -1,6 +1,5 @@
 package org.softlang.company.impl.bean;
 
-import java.io.Serializable;
 import java.util.Observer;
 
 import org.softlang.company.Container;
@@ -9,12 +8,8 @@ import org.softlang.company.Subunit;
 import org.softlang.util.ObservableSimpleList;
 import org.softlang.util.SimpleLinkedList;
 
-public abstract class ContainerImpl extends ComponentImpl implements Container, Serializable {
+public abstract class ContainerImpl extends ComponentImpl implements Container {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7719688791828355878L;
 	/*#if($Logging || $Precedence)*/
 	private ObservableSimpleList<Subunit> subunits =  new ObservableSimpleList<Subunit>(new SimpleLinkedList<Subunit>());
 	/*#end*/
@@ -24,7 +19,6 @@ public abstract class ContainerImpl extends ComponentImpl implements Container, 
 		return subunits;
 	}
 	/*#end*/
-
 	
 	/*#if($Logging || $Precedence)*/
 	public boolean add(Subunit u) {

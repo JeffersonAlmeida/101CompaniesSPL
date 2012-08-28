@@ -1,5 +1,6 @@
 package org.softlang.gui;
 
+import org.softlang.company.factory.PojoFactory;
 import org.softlang.swing.controller.Controller;
 import org.softlang.swing.model.Model;
 import org.softlang.swing.view.MainView;
@@ -13,7 +14,7 @@ import org.softlang.swing.view.MainView;
  */
 public class Interaction {
 	public static void main(String[] args) {
-		Model model = new Model();
+		Model model = new Model(new PojoFactory());
 		MainView view = new MainView(model);
 		Controller controller = new Controller(model, view);
 		

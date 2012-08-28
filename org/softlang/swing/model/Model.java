@@ -1,20 +1,13 @@
 package org.softlang.swing.model;
 
-import static org.junit.Assert.assertEquals;
-
-import org.softlang.command.CutCompany;
-import org.softlang.command.CutEmployee;
 import org.softlang.company.Company;
 import org.softlang.company.Department;
 import org.softlang.company.Employee;
+import org.softlang.company.factory.BeanFactory;
 import org.softlang.company.factory.Factory;
 import org.softlang.company.factory.PojoFactory;
 import org.softlang.features.OrderedCut;
-import org.softlang.features.SimpleCut;
 import org.softlang.features.TotalReducer;
-import org.softlang.features.TotalWalker;
-import org.softlang.operations.Cut;
-import org.softlang.operations.Total;
 
 /**
  * The data model.
@@ -29,40 +22,15 @@ public class Model {
 	/**
 	 * Constructor
 	 */
-	public Model() {
-		
+	public Model(Factory factory) {
 		// The serialized object has been copied over from elsewhere	
-		company = (org.softlang.company.impl.pojo.CompanyImpl)createSampleCompany(new PojoFactory());
-		//company = new CompanyImpl().readObject("sampleCompany.ser");
+		if(factory instanceof PojoFactory){
+			company = (org.softlang.company.impl.pojo.CompanyImpl)createSampleCompany(new PojoFactory());
+		}else if (factory instanceof BeanFactory){
+			company = (org.softlang.company.impl.bean.CompanyImpl)createSampleCompany(new BeanFactory());
+		}
 	}
 
-	/**
-	 * This method returns the total value for the current company, department
-	 * or employee.
-	 * 
-	 * @return current total value
-	 *//*
-	public String getTotal() {
-		if (currentValue != null) {
-			if (currentValue instanceof Company) {
-				return Double.toString(Total.total((Company) currentValue));
-				#if($TotalWalker)
-				    TotalWalker walker = new TotalWalker();
-				    walker.preorder(currentValue);
-				    return Double.toString(walker.getTotal());
-				/*#end
-			} else if (currentValue instanceof Department) {
-				return Double.toString(Total.total((Department) currentValue));
-			} else if (currentValue instanceof Employee) {
-				return Double.toString(Total.total((Employee) currentValue));
-			} else {
-				return "0";
-			}
-		} else {
-			return "0";
-		}
-	}*/
-	
 	/*#if($TotalWalker)*/
 	/**
 	 * This method returns the total value for the current company, department
@@ -90,24 +58,11 @@ public class Model {
 		return Double.toString(value);
 	}
 	//#end*/
-
-		
+	
+	/*#if($SimpleCut)*/
 	/**
 	 * This method cuts the current company, department or employee.
 	 */
-	/*public void cut() {
-		if (currentValue != null) {
-			if (currentValue instanceof Company) {
-				Cut.cut((Company) currentValue);
-			} else if (currentValue instanceof Department) {
-				Cut.cut((Department) currentValue);
-			} else if (currentValue instanceof Employee) {
-				Cut.cut((Employee) currentValue);
-			}
-		}
-	}*/
-	
-	/*#if($SimpleCut)*/
 	/*public void cut() {
 		SimpleCut cut = new SimpleCut();
 		cut.postorder(currentValue);
@@ -115,6 +70,9 @@ public class Model {
 	//#end*/
 	
 	/*#if($CommandCut)*/
+	/**
+	 * This method cuts the current company, department or employee.
+	 */
 	/*public void cut() {
 		if(currentValue instanceof Company){
 			CutCompany cut = new CutCompany((Company) currentValue);
@@ -126,6 +84,9 @@ public class Model {
 	//#end*/
 	
 	/*#if($requestCut)*/
+	/**
+	 * This method cuts the current company, department or employee.
+	 */
 	public void cut(){
 		OrderedCut cut = new OrderedCut();
 		cut.postorder(currentValue);

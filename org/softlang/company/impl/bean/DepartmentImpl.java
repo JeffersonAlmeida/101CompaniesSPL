@@ -10,7 +10,7 @@ import org.softlang.visitor.*;
 
 public class DepartmentImpl extends ContainerImpl implements Department {
 	
-	private static final long serialVersionUID = -1039019694812652130L;
+	/*#if($GUI)*/
 	private List<Department> subdepts;
 	private List<Employee> employees;
 	private DefaultMutableTreeNode treeNode;
@@ -20,28 +20,7 @@ public class DepartmentImpl extends ContainerImpl implements Department {
 		subdepts = new LinkedList<Department>();
 		employees = new LinkedList<Employee>();
 	}
-	
-	public Employee getManager() {
-		for (Subunit u : subunits())
-			if (u instanceof Employee) {
-				Employee e = (Employee)u;
-				if (e.getManager())
-					return e;
-			}
-		return null;
-	}	
 
-	public void accept(VoidVisitor v) {
-		v.visit(this);
-	}
-
-	public <R> R accept(ReturningVisitor<R> v) {
-		return v.visit(this);
-	}
-
-	
-	/*#if($GUI)*/
-	/*#end*/
 	public void setSubdepts(List<Department> subdepts) {
 		this.subdepts = subdepts;
 	}
@@ -66,7 +45,6 @@ public class DepartmentImpl extends ContainerImpl implements Department {
 		return treeNode;
 	}
 	
-	/*#if($GUI)*/
 	public boolean add(Subunit u) {
 		super.add(u);
 		if(u instanceof Department){
@@ -76,9 +54,6 @@ public class DepartmentImpl extends ContainerImpl implements Department {
 		}
 		return false;
 	}
-	/*#end*/
-	
-	/*#if($GUI)*/
 	/**
 	 * This method returns the name for the tree-view.
 	 */
@@ -88,5 +63,22 @@ public class DepartmentImpl extends ContainerImpl implements Department {
 		return treeName;
 	}
 	/*#end*/
-
+	
+	
+	
+	public Employee getManager() {
+		for (Subunit u : subunits())
+			if (u instanceof Employee) {
+				Employee e = (Employee)u;
+				if (e.getManager())
+					return e;
+			}
+		return null;
+	}	
+	public void accept(VoidVisitor v) {
+		v.visit(this);
+	}
+	public <R> R accept(ReturningVisitor<R> v) {
+		return v.visit(this);
+	}
 }

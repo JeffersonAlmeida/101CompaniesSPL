@@ -13,11 +13,10 @@ public interface Department extends Subunit, Container {
 	Employee getManager();
 	
 	/*#if($GUI)*/
-	/*#end*/
 	public String getName();
 	public List<Department> getSubdepts();
 	public List<Employee> getEmployees();
 	public DefaultMutableTreeNode getTreeNode();
 	public void setTreeNode(DefaultMutableTreeNode treeNode);
-	
+	/*#end*/	
 }

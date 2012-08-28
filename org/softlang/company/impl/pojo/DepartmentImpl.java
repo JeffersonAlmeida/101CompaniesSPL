@@ -1,31 +1,74 @@
 package org.softlang.company.impl.pojo;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
-import org.softlang.company.*;
-import org.softlang.visitor.*;
+import org.softlang.company.Department;
+import org.softlang.company.Employee;
+import org.softlang.company.Subunit;
+import org.softlang.visitor.ReturningVisitor;
+import org.softlang.visitor.VoidVisitor;
 
 public class DepartmentImpl extends ContainerImpl implements Department {
 	
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -3348153252455115129L;
+	/*#if($GUI)*/
 	private List<Department> subdepts;
 	private List<Employee> employees;
 	private DefaultMutableTreeNode treeNode;
-	
 	public DepartmentImpl() {
 		super();
 		subdepts = new LinkedList<Department>();
 		employees = new LinkedList<Employee>();
 	}	
-
+	public void setSubdepts(List<Department> subdepts) {
+		this.subdepts = subdepts;
+	}
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
+	public List<Department> getSubdepts() {
+		return subdepts;
+	}
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+	public void setTreeNode(DefaultMutableTreeNode treeNode) {
+		this.treeNode = treeNode;
+	}
+	public DefaultMutableTreeNode getTreeNode() {
+		return treeNode;
+	}
+	public boolean add(Subunit u) {
+		super.add(u);
+		if(u instanceof Department){
+			return this.subdepts.add((Department) u);
+		}else if(u instanceof Employee){
+			return this.employees.add((Employee) u);
+		}
+		return false;
+	}
+	/**
+	 * This method returns the name for the tree-view.
+	 */
+	@Override
+	public String toString() {
+		String treeName = this.getName();
+		return treeName;
+	}
+	/*#end*/
+	
+	
+	
+	
+	
+	public void accept(VoidVisitor v) {
+		v.visit(this);
+	}
+	public <R> R accept(ReturningVisitor<R> v) {
+		return v.visit(this);
+	}	
 	public Employee getManager() {
 		for (Subunit u : subunits())
 			if (u instanceof Employee) {
@@ -39,61 +82,4 @@ public class DepartmentImpl extends ContainerImpl implements Department {
 			}
 		return null;
 	}	
-
-	public void accept(VoidVisitor v) {
-		v.visit(this);
-	}
-
-	public <R> R accept(ReturningVisitor<R> v) {
-		return v.visit(this);
-	}	
-	
-	/*#if($GUI)*/
-	/*#end*/
-	public void setSubdepts(List<Department> subdepts) {
-		this.subdepts = subdepts;
-	}
-
-	public void setEmployees(List<Employee> employees) {
-		this.employees = employees;
-	}
-
-	public List<Department> getSubdepts() {
-		return subdepts;
-	}
-
-	public List<Employee> getEmployees() {
-		return employees;
-	}
-
-	public void setTreeNode(DefaultMutableTreeNode treeNode) {
-		this.treeNode = treeNode;
-	}
-
-	public DefaultMutableTreeNode getTreeNode() {
-		return treeNode;
-	}
-	
-	/*#if($GUI)*/
-	public boolean add(Subunit u) {
-		super.add(u);
-		if(u instanceof Department){
-			return this.subdepts.add((Department) u);
-		}else if(u instanceof Employee){
-			return this.employees.add((Employee) u);
-		}
-		return false;
-	}
-	/*#end*/
-	
-	/*#if($GUI)*/
-	/**
-	 * This method returns the name for the tree-view.
-	 */
-	@Override
-	public String toString() {
-		String treeName = this.getName();
-		return treeName;
-	}
-	/*#end*/
 }

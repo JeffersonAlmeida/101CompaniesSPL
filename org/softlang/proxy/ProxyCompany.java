@@ -1,32 +1,26 @@
 package org.softlang.proxy;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.softlang.company.*;
-import org.softlang.visitor.*;
+import org.softlang.company.Company;
+import org.softlang.company.Department;
+import org.softlang.company.Subunit;
+import org.softlang.visitor.ReturningVisitor;
+import org.softlang.visitor.VoidVisitor;
 
 /**
  * A proxy for companies to enforce access control policy for salaries.
  */
-/* package */ class ProxyCompany implements Company, Serializable {
+/* package */ class ProxyCompany implements Company {
 
-	/*#if($GUI)*/
-	/*#end*/
-	private static final long serialVersionUID = -200889592677165250L;
-	
 	private AccessControl context;
 	private Company subject;
 	
 	/*#if($GUI)*/
-	/*#end*/
 	private List<Department> depts;
+	/*#end*/
 	
 	public ProxyCompany() {
 		setDepts(new LinkedList<Department>());
@@ -69,49 +63,15 @@ import org.softlang.visitor.*;
 	}
 
 	/*#if($GUI)*/
-	/*#end*/
-	
-	@Override
-	public Company readObject(String filename) {
-		Object o = null;
-
-		try {
-			FileInputStream fis = new FileInputStream(filename);
-			ObjectInputStream in = new ObjectInputStream(fis);
-			o = in.readObject();
-			in.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-		return (Company) o;
-	}
-
-	@Override
-	public boolean writeObject(String filename) {
-		FileOutputStream fos = null;
-		ObjectOutputStream out = null;
-
-		try {
-			fos = new FileOutputStream(filename);
-			out = new ObjectOutputStream(fos);
-			out.writeObject(this);
-			out.close();
-			return true;
-		} catch (IOException ex) {
-			ex.printStackTrace();
-			return false;
-		}
-	}
-
 	public List<Department> getDepts() {
 		return depts;
 	}
-
+	/*#end*/
+	/*#if($GUI)*/
 	public void setDepts(List<Department> depts) {
 		this.depts = depts;
 	}	
+	/*#end*/
 	
 	/*#if($GUI)*/
 	/**
@@ -122,7 +82,4 @@ import org.softlang.visitor.*;
 		return this.getName();
 	}
 	/*#end*/
-
-	
-	
 }

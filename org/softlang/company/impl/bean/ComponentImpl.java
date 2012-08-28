@@ -8,11 +8,7 @@ import java.util.Observable;
  * Observability and a parent axis are added on top of the Component interface.
  */
 public abstract class ComponentImpl extends Observable implements Component {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -5406652043923008814L;
-		
+
 	private ComponentImpl parent;
 	private String name;
 	public String getName() {

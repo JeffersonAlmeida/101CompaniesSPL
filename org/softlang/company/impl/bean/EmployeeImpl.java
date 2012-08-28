@@ -4,12 +4,7 @@ import org.softlang.company.*;
 import org.softlang.visitor.*;
 
 public class EmployeeImpl extends ComponentImpl implements Employee {
-
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 4843688581850890850L;
 	private String name;
 	private String address;
 	private double salary;
@@ -70,6 +65,8 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 	public <R> R accept(ReturningVisitor<R> v) {
 		return v.visit(this);
 	}
+	
+	
 	
 	/*#if($GUI)*/
 	/**

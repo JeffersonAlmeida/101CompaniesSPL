@@ -9,22 +9,8 @@ import java.util.List;
  */
 
 
-public interface Company extends Container {
-	
-	
-		/*#if($GUI)*/
-		/*#end*/
-	
-		/**
-		 * Read (say, deserialize) a company
-		 */	
-		public Company readObject(String filename);
-		
-		/**
-		 * Write (say, serialize) an object.
-		 */
-		public boolean writeObject(String filename);
-		
-		public List<Department> getDepts();
-	
+public interface Company extends Container {	
+	/*#if($GUI)*/
+	public List<Department> getDepts();
+	/*#end*/
 }
