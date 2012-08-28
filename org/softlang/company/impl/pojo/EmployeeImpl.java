@@ -4,7 +4,12 @@ import org.softlang.company.*;
 import org.softlang.visitor.*;
 
 public class EmployeeImpl extends ComponentImpl implements Employee {
-
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6954269112397699786L;
 	private String address;
 	private double salary;
 	private boolean manager = false;
@@ -40,4 +45,18 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 	public <R> R accept(ReturningVisitor<R> v) {
 		return v.visit(this);
 	}
+	
+	/*#if($GUI)*/
+	/**
+	 * This method returns the name for the tree-view.
+	 */
+	@Override
+	public String toString(){
+		String treeName = this.getName();
+		if (manager) {
+			return treeName + " (Manager)";
+		}
+		return treeName;
+	}
+	/*#end*/
 }

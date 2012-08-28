@@ -1,5 +1,10 @@
 package org.softlang.proxy;
 
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.swing.tree.DefaultMutableTreeNode;
+
 import org.softlang.company.*;
 import org.softlang.visitor.*;
 
@@ -10,6 +15,16 @@ import org.softlang.visitor.*;
 
 	private AccessControl context;
 	private Department subject;
+	
+	private List<Department> subdepts;
+	private List<Employee> employees;
+	private DefaultMutableTreeNode treeNode;
+	
+	public ProxyDepartment() {
+		super();
+		subdepts = new LinkedList<Department>();
+		employees = new LinkedList<Employee>();
+	}	
 	
 	/* package */ ProxyDepartment(AccessControl context, Department subject) {
 		this.context = context;
@@ -29,9 +44,19 @@ import org.softlang.visitor.*;
 	}
 
 	public boolean add(Subunit u) {
+		if(u instanceof Department){
+			u = context.deploy(u);
+			return this.subdepts.add((Department) u);
+		}else if(u instanceof Employee){
+			return this.employees.add((Employee) u);
+		}
+		return false;
+	}
+	
+	/*public boolean add(Subunit u) {
 		u = context.deploy(u);
 		return subject.add(u);
-	}
+	}*/
 
 	public boolean remove(Subunit u) {
 		return subject.remove(u);
@@ -49,5 +74,42 @@ import org.softlang.visitor.*;
 	// Delegation is NOT appropriate here.
 	public <R> R accept(ReturningVisitor<R> v) {
 		return v.visit(this);
-	}	
+	}
+
+	/*#if($GUI)*/
+	/*#end*/
+	public void setSubdepts(List<Department> subdepts) {
+		this.subdepts = subdepts;
+	}
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
+
+	public List<Department> getSubdepts() {
+		return subdepts;
+	}
+
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setTreeNode(DefaultMutableTreeNode treeNode) {
+		this.treeNode = treeNode;
+	}
+
+	public DefaultMutableTreeNode getTreeNode() {
+		return treeNode;
+	}
+	
+	/*#if($GUI)*/
+	/**
+	 * This method returns the name for the tree-view.
+	 */
+	@Override
+	public String toString() {
+		String treeName = this.getName();
+		return treeName;
+	}
+	/*#end*/
 }

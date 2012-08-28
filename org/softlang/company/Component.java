@@ -1,5 +1,7 @@
 package org.softlang.company;
 
+import java.io.Serializable;
+
 import org.softlang.visitor.ReturningVisitor;
 import org.softlang.visitor.VoidVisitor;
 
@@ -8,9 +10,11 @@ import org.softlang.visitor.VoidVisitor;
  * All objects in a company have a name.
  * There is also general visitor support.
  */
-public interface Component {
+public interface Component extends Serializable{
+	
 	String getName();
 	void setName(String name);
 	void accept(VoidVisitor v);
 	<R> R accept(ReturningVisitor<R> v);
+	
 }

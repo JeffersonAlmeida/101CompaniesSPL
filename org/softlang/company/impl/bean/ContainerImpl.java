@@ -1,20 +1,32 @@
 package org.softlang.company.impl.bean;
 
-import org.softlang.company.*;
-import org.softlang.util.ObservableSimpleList;
-import org.softlang.util.SimpleLinkedList;
+import java.io.Serializable;
 import java.util.Observer;
 
-public abstract class ContainerImpl extends ComponentImpl implements Container {
+import org.softlang.company.Container;
+import org.softlang.company.Department;
+import org.softlang.company.Subunit;
+import org.softlang.util.ObservableSimpleList;
+import org.softlang.util.SimpleLinkedList;
 
+public abstract class ContainerImpl extends ComponentImpl implements Container, Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7719688791828355878L;
 	/*#if($Logging || $Precedence)*/
 	private ObservableSimpleList<Subunit> subunits =  new ObservableSimpleList<Subunit>(new SimpleLinkedList<Subunit>());
 	/*#end*/
 	
+	/*#if($Logging || $Precedence)*/	
 	public Iterable<? extends Subunit> subunits() {
 		return subunits;
 	}
+	/*#end*/
 
+	
+	/*#if($Logging || $Precedence)*/
 	public boolean add(Subunit u) {
 		ComponentImpl i = (ComponentImpl)u;
 		if (i.getParent()!=null)
@@ -22,12 +34,20 @@ public abstract class ContainerImpl extends ComponentImpl implements Container {
 		i.setParent(this);
 		return subunits.add(u);
 	}
+	/*#end*/
+	
+	/*#if($GUI)*/
+	public void add(Department department){
+	}
+	/*#end*/
 
+	/*#if($Logging || $Precedence)*/
 	public boolean remove(Subunit u) {
 		ComponentImpl i = (ComponentImpl)u;
 		i.setParent(null);
 		return subunits.remove(u);
 	}
+	/*#end*/
 	
 	
 	/*#if($Logging || $Precedence)*/

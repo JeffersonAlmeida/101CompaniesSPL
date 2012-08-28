@@ -62,5 +62,19 @@ import org.softlang.visitor.*;
 	// Delegation is NOT appropriate here.
 	public <R> R accept(ReturningVisitor<R> v) {
 		return v.visit(this);
-	}		
+	}	
+	
+	/*#if($GUI)*/
+	/**
+	 * This method returns the name for the tree-view.
+	 */
+	@Override
+	public String toString(){
+		String treeName = this.getName();
+		if (getManager()) {
+			return treeName + " (Manager)";
+		}
+		return treeName;
+	}
+	/*#end*/
 }

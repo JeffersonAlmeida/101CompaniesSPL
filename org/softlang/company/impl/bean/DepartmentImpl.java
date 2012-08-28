@@ -1,9 +1,25 @@
 package org.softlang.company.impl.bean;
 
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.swing.tree.DefaultMutableTreeNode;
+
 import org.softlang.company.*;
 import org.softlang.visitor.*;
 
 public class DepartmentImpl extends ContainerImpl implements Department {
+	
+	private static final long serialVersionUID = -1039019694812652130L;
+	private List<Department> subdepts;
+	private List<Employee> employees;
+	private DefaultMutableTreeNode treeNode;
+	
+	public DepartmentImpl() {
+		super();
+		subdepts = new LinkedList<Department>();
+		employees = new LinkedList<Employee>();
+	}
 	
 	public Employee getManager() {
 		for (Subunit u : subunits())
@@ -22,4 +38,55 @@ public class DepartmentImpl extends ContainerImpl implements Department {
 	public <R> R accept(ReturningVisitor<R> v) {
 		return v.visit(this);
 	}
+
+	
+	/*#if($GUI)*/
+	/*#end*/
+	public void setSubdepts(List<Department> subdepts) {
+		this.subdepts = subdepts;
+	}
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
+
+	public List<Department> getSubdepts() {
+		return subdepts;
+	}
+
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setTreeNode(DefaultMutableTreeNode treeNode) {
+		this.treeNode = treeNode;
+	}
+
+	public DefaultMutableTreeNode getTreeNode() {
+		return treeNode;
+	}
+	
+	/*#if($GUI)*/
+	public boolean add(Subunit u) {
+		super.add(u);
+		if(u instanceof Department){
+			return this.subdepts.add((Department) u);
+		}else if(u instanceof Employee){
+			return this.employees.add((Employee) u);
+		}
+		return false;
+	}
+	/*#end*/
+	
+	/*#if($GUI)*/
+	/**
+	 * This method returns the name for the tree-view.
+	 */
+	@Override
+	public String toString() {
+		String treeName = this.getName();
+		return treeName;
+	}
+	/*#end*/
+
 }
