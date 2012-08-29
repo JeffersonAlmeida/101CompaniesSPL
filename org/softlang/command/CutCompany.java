@@ -1,8 +1,10 @@
 package org.softlang.command;
 
 import org.softlang.company.Company;
-import org.softlang.company.Employee;
+/*#if($Cut || $Total)*/
 import org.softlang.template.Walker;
+import org.softlang.company.Employee;
+/*#end*/
 
 /**
  * Construct a salary cut for all salaries in a company
@@ -10,10 +12,12 @@ import org.softlang.template.Walker;
 public class CutCompany extends Batch {
 
 	public CutCompany(Company c) {
+		/*#if($Cut || $Total)*/
 		new Walker() {
 			public void visit(Employee e) {
 				add(new CutEmployee(e));
 			}
 		}.postorder(c);
+		/*#end*/
 	}
 }

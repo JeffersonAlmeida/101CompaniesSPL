@@ -3,7 +3,11 @@ package org.softlang.tests;
 import org.softlang.company.*;
 import org.softlang.company.factory.PojoFactory;
 import org.softlang.features.*;
+
+/*#if($AccessControl)*/
 import org.softlang.proxy.*;
+/*#end*/
+
 import org.junit.*;
 import static org.junit.Assert.*;
 
