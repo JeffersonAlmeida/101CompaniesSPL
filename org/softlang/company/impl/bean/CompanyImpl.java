@@ -5,18 +5,21 @@ import java.util.List;
 
 import org.softlang.company.Company;
 import org.softlang.company.Department;
+/*#if($Cut || $Total)*/
 import org.softlang.visitor.ReturningVisitor;
 import org.softlang.visitor.VoidVisitor;
+/*#end*/
 
 public class CompanyImpl extends ContainerImpl implements Company {
-
+	
+	/*#if($Cut || $Total)*/
 	public void accept(VoidVisitor v) {
 		v.visit(this);
 	}
 	public <R> R accept(ReturningVisitor<R> v) {
 		return v.visit(this);
 	}
-	
+	/*#end*/
 	
 	
 	

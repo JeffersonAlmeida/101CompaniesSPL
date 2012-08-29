@@ -8,8 +8,11 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import org.softlang.company.Department;
 import org.softlang.company.Employee;
 import org.softlang.company.Subunit;
+
+/*#if($Cut || $Total)*/
 import org.softlang.visitor.ReturningVisitor;
 import org.softlang.visitor.VoidVisitor;
+/*#end*/
 
 public class DepartmentImpl extends ContainerImpl implements Department {
 	
@@ -62,13 +65,15 @@ public class DepartmentImpl extends ContainerImpl implements Department {
 	
 	
 	
-	
+	/*#if($Cut || $Total)*/
 	public void accept(VoidVisitor v) {
 		v.visit(this);
 	}
 	public <R> R accept(ReturningVisitor<R> v) {
 		return v.visit(this);
-	}	
+	}
+	/*#end*/
+	
 	public Employee getManager() {
 		for (Subunit u : subunits())
 			if (u instanceof Employee) {

@@ -1,8 +1,9 @@
 package org.softlang.proxy;
 
 import org.softlang.company.*;
+/*#if($Cut || $Total)*/
 import org.softlang.visitor.*;
-
+/*#end*/
 /**
  * A proxy for employees to enforce access control policy for salaries.
  */
@@ -44,7 +45,9 @@ import org.softlang.visitor.*;
 	}
 	public void setManager(boolean manager) {
 		subject.setManager(manager);
-	}		
+	}	
+	
+	/*#if($Cut || $Total)*/
 	// Delegation is NOT appropriate here.
 	public void accept(VoidVisitor v) {
 		v.visit(this);
@@ -53,6 +56,7 @@ import org.softlang.visitor.*;
 	public <R> R accept(ReturningVisitor<R> v) {
 		return v.visit(this);
 	}	
+	/*#end*/
 	
 	
 	

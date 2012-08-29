@@ -6,8 +6,9 @@ import java.util.List;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import org.softlang.company.*;
+/*#if($Cut || $Total)*/
 import org.softlang.visitor.*;
-
+/*#end*/
 /**
  * A proxy for departments to enforce access control policy for salaries.
  */
@@ -66,6 +67,8 @@ import org.softlang.visitor.*;
 	public Employee getManager() {
 		return subject.getManager();
 	}		
+	
+	/*#if($Cut || $Total)*/
 	// Delegation is NOT appropriate here.
 	public void accept(VoidVisitor v) {
 		v.visit(this);
@@ -74,6 +77,7 @@ import org.softlang.visitor.*;
 	public <R> R accept(ReturningVisitor<R> v) {
 		return v.visit(this);
 	}
+	/*#end*/
 	
 	
 	

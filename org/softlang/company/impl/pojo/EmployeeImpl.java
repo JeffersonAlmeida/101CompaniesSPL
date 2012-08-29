@@ -1,7 +1,10 @@
 package org.softlang.company.impl.pojo;
 
 import org.softlang.company.*;
+
+/*#if($Cut || $Total)*/
 import org.softlang.visitor.*;
+/*#end*/
 
 public class EmployeeImpl extends ComponentImpl implements Employee {
 	
@@ -27,12 +30,15 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 	public void setManager(boolean manager) {
 		this.manager = manager;
 	}
+	
+	/*#if($Cut || $Total)*/
 	public void accept(VoidVisitor v) {
 		v.visit(this);
 	}
 	public <R> R accept(ReturningVisitor<R> v) {
 		return v.visit(this);
 	}
+	/*#end*/
 	
 	
 	

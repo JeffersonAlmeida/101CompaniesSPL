@@ -6,8 +6,10 @@ import java.util.List;
 import org.softlang.company.Company;
 import org.softlang.company.Department;
 import org.softlang.company.Subunit;
+/*#if($Cut || $Total)*/
 import org.softlang.visitor.ReturningVisitor;
 import org.softlang.visitor.VoidVisitor;
+/*#end*/
 
 /**
  * A proxy for companies to enforce access control policy for salaries.
@@ -50,15 +52,16 @@ import org.softlang.visitor.VoidVisitor;
 		return subject.remove(u);
 	}
 
+	/*#if($Cut || $Total)*/
 	// Delegation is NOT appropriate here.
 	public void accept(VoidVisitor v) {
 		v.visit(this);
 	}
-
 	// Delegation is NOT appropriate here.
 	public <R> R accept(ReturningVisitor<R> v) {
 		return v.visit(this);
 	}
+	/*#end*/
 
 	/*#if($GUI)*/
 	public List<Department> getDepts() {

@@ -6,7 +6,10 @@ import java.util.List;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import org.softlang.company.*;
+
+/*#if($Cut || $Total)*/
 import org.softlang.visitor.*;
+/*#end*/
 
 public class DepartmentImpl extends ContainerImpl implements Department {
 	
@@ -75,10 +78,13 @@ public class DepartmentImpl extends ContainerImpl implements Department {
 			}
 		return null;
 	}	
+	
+	/*#if($Cut || $Total)*/
 	public void accept(VoidVisitor v) {
 		v.visit(this);
 	}
 	public <R> R accept(ReturningVisitor<R> v) {
 		return v.visit(this);
 	}
+	/*#end*/
 }
