@@ -83,7 +83,9 @@ public class EmployeeView extends AbstractView {
 		c.gridx = 1;
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 1;
+		/*#if($Total)*/
 		total.setText(model.getTotal());
+		/*#end*/
 		this.add(total, c);
 
 		// cut

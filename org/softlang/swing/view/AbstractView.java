@@ -50,7 +50,9 @@ public abstract class AbstractView extends JPanel {
 	 * This method refreshs the total value after a cut.
 	 */
 	public void refresh() {
+		/*#if($Total)*/
 		total.setText(model.getTotal());
+		/*#end*/
 	}
 	
 	/**

@@ -63,7 +63,9 @@ public class CompanyView extends AbstractView {
 		c.gridx = 1;
 		c.weightx = 1;
 		c.fill = GridBagConstraints.HORIZONTAL;		
+		/*#if($Total)*/
 		total.setText(model.getTotal());
+		/*#end*/
 		total.setEditable(false);
 		this.add(total, c);
 		

@@ -106,7 +106,9 @@ public class Controller {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			/*#if($Cut)*/
 			model.cut();
+			/*#end*/
 			view.refresh();
 		}
 

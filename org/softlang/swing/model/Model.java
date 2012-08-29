@@ -79,10 +79,10 @@ public class Model {
 	/**
 	 * This method cuts the current company, department or employee.
 	 */
-	/*public void cut() {
+	public void cut() {
 		SimpleCut cut = new SimpleCut();
 		cut.postorder(currentValue);
-	}*/
+	}
 	//#end*/
 	
 	/*#if($CommandCut)*/
@@ -103,10 +103,10 @@ public class Model {
 	/**
 	 * This method cuts the current company, department or employee.
 	 */
-	public void cut(){
+	/*public void cut(){
 		OrderedCut cut = new OrderedCut();
 		cut.postorder(currentValue);
-	}
+	}*/
 	//#end*/
 
 	// ----------------------------------- GETTER & SETTER
