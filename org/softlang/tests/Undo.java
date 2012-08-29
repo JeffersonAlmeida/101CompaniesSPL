@@ -2,8 +2,15 @@ package org.softlang.tests;
 
 import org.softlang.company.Company;
 import org.softlang.company.factory.*;
+
+/*#if($TotalReducer)*/
 import org.softlang.features.TotalReducer;
+/*#end*/
+
+/*#if($CommandCut)*/
 import org.softlang.command.CutCompany;
+/*#end*/
+
 import org.junit.*;
 import static org.junit.Assert.assertEquals;
 
