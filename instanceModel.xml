@@ -15,8 +15,6 @@
 	
 	<feature name="Logging" type="NONE" id="Logging"></feature>	
 	
-	<feature name="GUI" type="NONE" id="GUI"></feature>	
-	
 	<feature name="Testes" type="NONE" id="Testes"></feature>	
 	
 </feature>

@@ -18,12 +18,11 @@ import org.softlang.visitor.VoidVisitor;
 	private Company subject;
 	
 	/*#if($GUI)*/
-	private List<Department> depts;
-	/*#end*/
-	
+	private List<Department> depts;	
 	public ProxyCompany() {
 		setDepts(new LinkedList<Department>());
 	}
+	/*#end*/
 	
 	/* package */ ProxyCompany(AccessControl context, Company subject) {
 		this.context = context;

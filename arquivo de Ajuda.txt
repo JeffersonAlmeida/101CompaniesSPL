@@ -6,6 +6,9 @@ CK - Feature: Testes
 
 <configuration xmlns=""><expression>Testes</expression><transformation><name>createBuildEntries</name><args>Testes</args></transformation></configuration><configuration xmlns=""><expression>Testes</expression><transformation><name>selectAndMoveComponent</name><args>Basics, org/softlang/tests/Basics.java</args></transformation></configuration><configuration xmlns=""><expression>Testes</expression><transformation><name>selectAndMoveComponent</name><args>Observability, org/softlang/tests/Observability.java</args></transformation></configuration><configuration xmlns=""><expression>Testes</expression><transformation><name>selectAndMoveComponent</name><args>Proxying, org/softlang/tests/Proxying.java</args></transformation></configuration><configuration xmlns=""><expression>Testes</expression><transformation><name>selectAndMoveComponent</name><args>Undo, org/softlang/tests/Undo.java</args></transformation></configuration>
 
+Instance Model: Feature GUI
+
+	<feature name="GUI" type="NONE" id="GUI"></feature>	
 
 
 <feature min="0" max="1" name="Cut" type="NONE" id="Cut"></feature>

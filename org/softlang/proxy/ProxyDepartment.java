@@ -44,15 +44,7 @@ import org.softlang.visitor.*;
 	}
 
 	public boolean add(Subunit u) {
-		/*#if(!$GUI)*/
-		
-		if(employees==null){
-			System.out.println("\n\nEmplyee == NULL \n\n");
-		}
-		if(subdepts==null){
-			System.out.println("\n\nsubdepts == NULL \n\n");
-		}
-		
+		/*#if($GUI)*/
 		if(u instanceof Department){
 			 this.subdepts.add((Department) u);
 		}else if(u instanceof Employee){
