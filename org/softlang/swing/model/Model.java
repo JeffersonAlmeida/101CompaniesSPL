@@ -1,13 +1,29 @@
 package org.softlang.swing.model;
 
+import org.softlang.command.CutCompany;
+import org.softlang.command.CutEmployee;
 import org.softlang.company.Company;
 import org.softlang.company.Department;
 import org.softlang.company.Employee;
 import org.softlang.company.factory.BeanFactory;
 import org.softlang.company.factory.Factory;
 import org.softlang.company.factory.PojoFactory;
+
+/*#if($requestCut)*/
 import org.softlang.features.OrderedCut;
+/*#end*/
+
+/*#if($SimpleCut)*/
+import org.softlang.features.SimpleCut;
+/*#end*/
+
+/*#if($TotalReducer)*/
 import org.softlang.features.TotalReducer;
+/*#end*/
+
+/*#if($TotalWalker)*/
+import org.softlang.features.TotalWalker;
+/*#end*/
 
 /**
  * The data model.
@@ -37,12 +53,12 @@ public class Model {
 	 * or employee.
 	 * 
 	 * @return current total value
-	 *//*
+	 */
 	public String getTotal() {
 		TotalWalker walker = new TotalWalker();
 	    walker.postorder(currentValue);
 	    return Double.toString(walker.getTotal());
-	}*/
+	}
 	/*#end*/
 	
 	/*#if($TotalReducer)*/
@@ -52,11 +68,11 @@ public class Model {
 	 * 
 	 * @return current total value
 	 */
-	public String getTotal() {
+	/*public String getTotal() {
 		TotalReducer total = new TotalReducer();
 		double value = total.reduce(currentValue);
 		return Double.toString(value);
-	}
+	}*/
 	//#end*/
 	
 	/*#if($SimpleCut)*/

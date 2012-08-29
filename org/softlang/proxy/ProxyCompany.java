@@ -1,6 +1,5 @@
 package org.softlang.proxy;
 
-import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 

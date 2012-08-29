@@ -22,17 +22,13 @@ import org.softlang.visitor.*;
 	private DefaultMutableTreeNode treeNode;
 	/*#end*/
 	
-	/*#if($GUI)*/
-	public ProxyDepartment() {
-		super();
-		subdepts = new LinkedList<Department>();
-		employees = new LinkedList<Employee>();
-	}
-	/*#end*/
-	
 	/* package */ ProxyDepartment(AccessControl context, Department subject) {
 		this.context = context;
 		this.subject = subject;
+		/*#if($GUI)*/
+		subdepts = new LinkedList<Department>();
+		employees = new LinkedList<Employee>();
+		/*#end*/
 	}
 
 	public String getName() {
@@ -47,24 +43,30 @@ import org.softlang.visitor.*;
 		return subject.subunits();
 	}
 
-	/*#if($GUI)*/
 	public boolean add(Subunit u) {
-		if(u instanceof Department){
-			u = context.deploy(u);
-			return this.subdepts.add((Department) u);
-		}else if(u instanceof Employee){
-			return this.employees.add((Employee) u);
+		/*#if(!$GUI)*/
+		
+		if(employees==null){
+			System.out.println("\n\nEmplyee == NULL \n\n");
 		}
-		return false;
+		if(subdepts==null){
+			System.out.println("\n\nsubdepts == NULL \n\n");
+		}
+		
+		if(u instanceof Department){
+			 this.subdepts.add((Department) u);
+		}else if(u instanceof Employee){
+			 this.employees.add((Employee) u);
+		}
+		/*#end*/
+		u = context.deploy(u);
+		return subject.add(u);
 	}
-	/*#end*/
 	
-	/*#if(!$GUI)*/
 	/*public boolean add(Subunit u) {
 		u = context.deploy(u);
 		return subject.add(u);
 	}*/
-	/*#end*/
 	
 	public boolean remove(Subunit u) {
 		return subject.remove(u);

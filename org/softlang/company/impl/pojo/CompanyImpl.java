@@ -46,9 +46,10 @@ public class CompanyImpl extends ContainerImpl implements Company{
 	 * Enforce the constraint a company can only aggregate departments
 	 */
 	public boolean add(Subunit u) {
-		if (!(u instanceof Department))
+		if (!(u instanceof Department)){
 			throw new IllegalArgumentException();
-		return depts.add((Department) u);
+		}
+		/*#if($GUI)*/depts.add((Department) u);/*#end*/
+		return super.add(u);
 	}
-	
 }
