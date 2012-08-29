@@ -88,15 +88,22 @@ public class Basics {
 	}
 	
 	private void testTotal(Factory f) {
+		
 		Company sampleCompany = createSampleCompany(f);
+		
+		/*#if($TotalReducer)*/
 		TotalReducer reducer = new TotalReducer();
 	    assertEquals(399747, reducer.reduce(sampleCompany), 0);
-		TotalWalker walker = new TotalWalker();
+	    /*#end*/
+	    
+	    /*#if($TotalWalker)*/
+	    TotalWalker walker = new TotalWalker();
 		walker.preorder(sampleCompany);
 	    assertEquals(399747, walker.getTotal(), 0);
+	    /*#end*/
 	}
 
-		
+	/*#if($TotalReducer && $SimpleCut)*/	
 	private void testCut(Factory f) {
 		Company sampleCompany = createSampleCompany(f);	
 		TotalReducer total = new TotalReducer();
@@ -106,16 +113,21 @@ public class Basics {
 		double after = total.reduce(sampleCompany);
 		assertEquals(before / 2.0d, after, 0);
 	}
+	 /*#end*/
 	
+	/*#if($TotalReducer && $SimpleCut)*/	
 	@Test
 	public void testCutPojo() {
 		testCut(new PojoFactory());
 	}
+	/*#end*/
 	
+	/*#if($TotalReducer && $SimpleCut)*/	
 	@Test
 	public void testCutBean() {
 		testCut(new BeanFactory());
 	}	
+	/*#end*/
 	
 	@Test
 	public void testTotalPojo() {

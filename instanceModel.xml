@@ -6,8 +6,7 @@
 	
 	<feature name="Cut" type="NONE" id="Cut"></feature>
 	<feature name="SimpleCut" type="NONE" id="SimpleCut"></feature>
-	<feature name="requestCut" type="NONE" id="requestCut"></feature>
-	<feature name="CommandCut" type="NONE" id="CommandCut"></feature>	
+	
 	
 	<feature name="Total" type="NONE" id="Total"></feature>	
 	<feature name="TotalWalker" type="NONE" id="TotalWalker"></feature>	
@@ -16,6 +15,8 @@
 	<feature name="Logging" type="NONE" id="Logging"></feature>	
 	
 	<feature name="Testes" type="NONE" id="Testes"></feature>	
+	
+	<feature name="GUI" type="NONE" id="GUI"></feature>	
 	
 </feature>
 	

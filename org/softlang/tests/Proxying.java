@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 
 public class Proxying {
 	
+	/*#if($AccessControl && $TotalReducer)*/
 	@Test
 	public void testTotal() {
 		Company sampleCompany = Basics.createSampleCompany(new PojoFactory());
@@ -18,7 +19,9 @@ public class Proxying {
 		TotalReducer reducer = new TotalReducer();
 	    assertEquals(399747, reducer.reduce(sampleCompany), 0);
 	}
+	/*#end*/
 
+	/*#if($AccessControl && $TotalReducer)*/
 	@Test(expected=IllegalArgumentException.class)
 	public void testTotalException() {
 		Company sampleCompany = Basics.createSampleCompany(new PojoFactory());
@@ -28,7 +31,9 @@ public class Proxying {
 		TotalReducer reducer = new TotalReducer();
 	    reducer.reduce(sampleCompany);
 	}
-		
+	/*#end*/
+	
+	/*#if($AccessControl && $TotalReducer && $SimpleCut)*/
 	@Test
 	public void testCut() {
 		Company sampleCompany = Basics.createSampleCompany(new PojoFactory());
@@ -41,7 +46,9 @@ public class Proxying {
 		double after = total.reduce(sampleCompany);
 		assertEquals(before / 2.0d, after, 0);
 	}
+	/*#end*/
 
+	/*#if($AccessControl && $SimpleCut)*/
 	@Test(expected=IllegalArgumentException.class)
 	public void testCutException() {
 		Company sampleCompany = Basics.createSampleCompany(new PojoFactory());
@@ -50,5 +57,6 @@ public class Proxying {
 		sampleCompany = ac.deploy(sampleCompany);
 		SimpleCut cut = new SimpleCut();
 		cut.postorder(sampleCompany);
-	}	
+	}
+	/*#end*/
 }

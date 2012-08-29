@@ -1,7 +1,10 @@
 package org.softlang.swing.model;
 
+/*#if($CommandCut)*/
 import org.softlang.command.CutCompany;
 import org.softlang.command.CutEmployee;
+/*#end*/
+
 import org.softlang.company.Company;
 import org.softlang.company.Department;
 import org.softlang.company.Employee;

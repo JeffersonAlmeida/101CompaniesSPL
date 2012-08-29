@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 public class Undo {
 
+	/*#if($TotalReducer && $CommandCut)*/
 	private void testUndo(Factory f) {
 		Company sampleCompany = Basics.createSampleCompany(f);
 		TotalReducer total = new TotalReducer();
@@ -21,14 +22,19 @@ public class Undo {
 	    cut.undo();
 	    assertEquals(before, total.reduce(sampleCompany), 0);
 	}
+	/*#end*/
 	
+	/*#if($TotalReducer && $CommandCut)*/
 	@Test
 	public void testUndoPojo() {
 		testUndo(new PojoFactory());
 	}
+	/*#end*/
 	
+	/*#if($TotalReducer && $CommandCut)*/
 	@Test
 	public void testUndoBean() {
 		testUndo(new BeanFactory());
 	}	
+	/*#end*/
 }

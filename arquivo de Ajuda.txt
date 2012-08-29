@@ -9,6 +9,11 @@ CK - Feature: Testes
 Instance Model: Feature GUI
 
 	<feature name="GUI" type="NONE" id="GUI"></feature>	
+	
+	<feature name="requestCut" type="NONE" id="requestCut"></feature>
+	<feature name="CommandCut" type="NONE" id="CommandCut"></feature>	
+	
+	<feature name="TotalReducer" type="NONE" id="TotalReducer"></feature>	
 
 
 <feature min="0" max="1" name="Cut" type="NONE" id="Cut"></feature>
