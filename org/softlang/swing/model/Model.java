@@ -73,40 +73,30 @@ public class Model {
 	}
 	/*#end*/
 	
-	/*#if($SimpleCut)*/
+	/*#if($Cut)*/
 	/**
 	 * This method cuts the current company, department or employee.
 	 */
 	public void cut() {
-		SimpleCut cut = new SimpleCut();
-		cut.postorder(currentValue);
+		/*#if($SimpleCut)*/
+		SimpleCut simpleCut = new SimpleCut();
+		simpleCut.postorder(currentValue);
+		//#end*/
+		/*#if($CommandCut)*/
+		if(currentValue instanceof Company){
+			CutCompany commandCut = new CutCompany((Company) currentValue);
+			commandCut.execute();
+		}else if (currentValue instanceof Employee){
+			new CutEmployee((Employee) currentValue).execute();
+		}
+		//#end*/
+		/*#if($requestCut)*/
+		OrderedCut orderedCut = new OrderedCut();
+		orderedCut.postorder(currentValue);
+		//#end*/
 	}
 	//#end*/
 	
-	/*#if($CommandCut)*/
-	/**
-	 * This method cuts the current company, department or employee.
-	 */
-	/*public void cut() {
-		if(currentValue instanceof Company){
-			CutCompany cut = new CutCompany((Company) currentValue);
-			cut.execute();
-		}else if (currentValue instanceof Employee){
-			new CutEmployee((Employee) currentValue).execute();
-		}		 
-	}*/
-	//#end*/
-	
-	/*#if($requestCut)*/
-	/**
-	 * This method cuts the current company, department or employee.
-	 */
-	/*public void cut(){
-		OrderedCut cut = new OrderedCut();
-		cut.postorder(currentValue);
-	}*/
-	//#end*/
-
 	// ----------------------------------- GETTER & SETTER
 	public void setName(String newValue) {
 		currentValue.setName(newValue);
