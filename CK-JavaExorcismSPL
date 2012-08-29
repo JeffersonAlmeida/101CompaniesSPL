@@ -73,6 +73,16 @@ Feature: Total
 		
 Feature: TotalWalker
 
-Feature: TotalReducer		
+Feature: TotalReducer
+
+Feature: GUI	
+
+	org.softlang.gui
+	org.softlang.swing.controller
+	org.softlang.swing.model
+	org.softlang.swing.view
+
+
+	
 
 	
