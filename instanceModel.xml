@@ -9,7 +9,6 @@
 	
 	
 	<feature name="Total" type="NONE" id="Total"></feature>	
-	<feature name="TotalWalker" type="NONE" id="TotalWalker"></feature>	
 	<feature name="TotalReducer" type="NONE" id="TotalReducer"></feature>	
 	
 	<feature name="Logging" type="NONE" id="Logging"></feature>	

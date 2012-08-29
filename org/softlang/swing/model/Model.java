@@ -50,7 +50,7 @@ public class Model {
 		}
 	}
 
-	/*#if($TotalWalker)*/
+	/*#if($Total)*/
 	/**
 	 * This method returns the total value for the current company, department
 	 * or employee.
@@ -58,25 +58,20 @@ public class Model {
 	 * @return current total value
 	 */
 	public String getTotal() {
+		String value = "";
+		/*#if($TotalWalker)*/
 		TotalWalker walker = new TotalWalker();
 	    walker.postorder(currentValue);
-	    return Double.toString(walker.getTotal());
+	    value = Double.toString(walker.getTotal());
+	    /*#end*/
+		/*#if($TotalReducer)*/
+	    TotalReducer total = new TotalReducer();
+		double valueDouble = total.reduce(currentValue);
+		value = Double.toString(valueDouble);
+		/*#end*/
+	    return value;
 	}
 	/*#end*/
-	
-	/*#if($TotalReducer)*/
-	/**
-	 * This method returns the total value for the current company, department
-	 * or employee.
-	 * 
-	 * @return current total value
-	 */
-	/*public String getTotal() {
-		TotalReducer total = new TotalReducer();
-		double value = total.reduce(currentValue);
-		return Double.toString(value);
-	}*/
-	//#end*/
 	
 	/*#if($SimpleCut)*/
 	/**
