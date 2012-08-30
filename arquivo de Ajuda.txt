@@ -21,6 +21,14 @@ Instance Model: Feature GUI
 	<feature name="Cut" type="NONE" id="Cut"></feature>
 	<feature name="requestCut" type="NONE" id="requestCut"></feature>	
 	
+	
+	<feature name="GUI" type="NONE" id="GUI"></feature>		
+	<feature name="Cut" type="NONE" id="Cut"></feature>
+	<feature name="CommandCut" type="NONE" id="CommandCut"></feature>		
+	<feature name="Total" type="NONE" id="Total"></feature>	
+	<feature name="TotalReducer" type="NONE" id="TotalReducer"></feature>	
+	<feature name="Testes" type="NONE" id="Testes"></feature>	
+	
 
 
 <feature min="0" max="1" name="Cut" type="NONE" id="Cut"></feature>
