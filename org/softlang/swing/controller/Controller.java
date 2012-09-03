@@ -67,25 +67,32 @@ public class Controller {
 				if (model.getCurrentValue() != null) {
 					if (model.getCurrentValue() instanceof Company) {
 						CompanyView comp = new CompanyView(model);
+						/*#if($Cut)*/
 						comp.addCutListener(new CutListener());
+						/*#end*/
 						comp.addNameListener(new ChangeListener(
 								Controller.this, "name"));
 						gui = comp;
 					} else if (model.getCurrentValue() instanceof Department) {
 						DepartmentView dep = new DepartmentView(model);
+						/*#if($Cut)*/
 						dep.addCutListener(new CutListener());
+						/*#end*/
 						dep.addNameListener(new ChangeListener(Controller.this,
 								"name"));
 						gui = dep;
 					} else if (model.getCurrentValue() instanceof Employee) {
 						EmployeeView emp = new EmployeeView(model);
+						/*#if($Cut)*/
 						emp.addCutListener(new CutListener());
+						/*#end*/
 						emp.addNameListener(new ChangeListener(Controller.this,
 								"name"));
 						emp.addAddressListener(new ChangeListener(
 								Controller.this, "address"));
-						emp.addSalaryListener(new ChangeListener(
-								Controller.this, "salary"));
+						/*#if($Total)*/
+						emp.addSalaryListener(new ChangeListener(Controller.this, "salary"));
+						//#end*/
 						gui = emp;
 					} else {
 						gui = new JPanel();
@@ -99,20 +106,18 @@ public class Controller {
 		}
 	};
 
+	/*#if($Cut)*/
 	/*
 	 * Listener for the cut buttons
 	 */
 	private class CutListener implements ActionListener {
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			/*#if($Cut)*/
 			model.cut();
-			/*#end*/
 			view.refresh();
 		}
-
 	}
+	/*#end*/
 
 	/**
 	 * If the name has changed, this method changes the model and refreshes the

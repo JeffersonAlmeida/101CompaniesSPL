@@ -2,7 +2,9 @@ package org.softlang.tests;
 
 import org.softlang.company.*;
 import org.softlang.company.factory.*;
+/*#if($TotalReducer || $SimpleCut)*/
 import org.softlang.features.*;
+/*#end*/
 import org.junit.*;
 import static org.junit.Assert.*;
 

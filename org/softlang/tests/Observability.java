@@ -2,7 +2,9 @@ package org.softlang.tests;
 
 import org.softlang.company.impl.bean.CompanyImpl;
 import org.softlang.company.factory.BeanFactory;
+/*#if($Logging || $Cut || $Total || $Precedence)*/
 import org.softlang.features.*;
+/*#end*/
 import org.junit.*;
 import static org.junit.Assert.assertEquals;
 

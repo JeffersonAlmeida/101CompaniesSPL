@@ -2,8 +2,9 @@ package org.softlang.tests;
 
 import org.softlang.company.*;
 import org.softlang.company.factory.PojoFactory;
+/*#if($Cut || $Total || $AccessControl)*/
 import org.softlang.features.*;
-
+/*#end*/
 /*#if($AccessControl)*/
 import org.softlang.proxy.*;
 /*#end*/

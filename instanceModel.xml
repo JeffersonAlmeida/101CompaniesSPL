@@ -4,6 +4,7 @@
 	
 	<feature name="Testes" type="NONE" id="Testes"></feature>
 	
+	<feature name="GUI" type="NONE" id="GUI"></feature>		
 	
 </feature>
 	

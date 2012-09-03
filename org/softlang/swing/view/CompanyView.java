@@ -53,22 +53,26 @@ public class CompanyView extends AbstractView {
 		name.setText(company.getName());
 		this.add(name, c);
 		
+		/*#if($Total)*/
 		// total
 		c.gridy = 1;
 		c.gridx = 0;
 		c.weightx = 0;
 		c.fill = GridBagConstraints.NONE;
 		this.add(new JLabel("Total: "), c);
+		//#end*/
 		
 		c.gridx = 1;
 		c.weightx = 1;
 		c.fill = GridBagConstraints.HORIZONTAL;		
 		/*#if($Total)*/
 		total.setText(model.getTotal());
-		/*#end*/
 		total.setEditable(false);
 		this.add(total, c);
+		/*#end*/
 		
+		
+		/*#if($Cut)*/
 		// cut
 		c.gridy = 2;
 		c.gridx = 0;
@@ -77,6 +81,8 @@ public class CompanyView extends AbstractView {
 		c.fill = GridBagConstraints.NONE;
 		c.anchor = GridBagConstraints.CENTER;
 		this.add(cut, c);
+		/*#end*/
+		
 		
 		// filler
 		c.gridy = 3;

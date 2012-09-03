@@ -73,21 +73,21 @@ public class EmployeeView extends AbstractView {
 		address.setText(employee.getAddress());
 		this.add(address, c);
 
+		/*#if($Total)*/
 		// salary
 		c.gridx = 0;
 		c.gridy = 2;
 		c.anchor = GridBagConstraints.WEST;
 		c.weightx = 0;
 		this.add(new JLabel("Salary: "), c);
-
 		c.gridx = 1;
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 1;
-		/*#if($Total)*/
 		total.setText(model.getTotal());
-		/*#end*/
 		this.add(total, c);
+		//#end*/
 
+		/*#if($Cut)*/
 		// cut
 		c.gridy = 3;
 		c.gridx = 0;
@@ -96,6 +96,7 @@ public class EmployeeView extends AbstractView {
 		c.fill = GridBagConstraints.NONE;
 		c.anchor = GridBagConstraints.CENTER;
 		this.add(cut, c);
+		/*#end*/
 
 		// filler
 		c.gridy = 4;
