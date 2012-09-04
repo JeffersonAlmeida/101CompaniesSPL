@@ -11,7 +11,11 @@
 
 	<feature name="Precedence" type="NONE" id="Precedence"></feature>
 	
-	<feature name="Logging" type="NONE" id="Logging"></feature>	   
+	<feature name="Logging" type="NONE" id="Logging"></feature>	
+	<feature name="AccessControl" type="NONE" id="AccessControl"></feature>	   	
+	
+	<feature name="Cut" type="NONE" id="Cut"></feature>
+	<feature name="CutWhatever" type="NONE" id="CutWhatever"></feature>	
 	
 </feature>
 	

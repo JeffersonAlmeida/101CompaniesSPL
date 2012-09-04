@@ -15,7 +15,7 @@ import org.softlang.swing.view.MainView;
  */
 public class Interaction {
 	public static void main(String[] args) {
-		Model model = new Model(new PojoFactory());
+		Model model = new Model(new BeanFactory());
 		MainView view = new MainView(model);
 		Controller controller = new Controller(model, view);
 		
