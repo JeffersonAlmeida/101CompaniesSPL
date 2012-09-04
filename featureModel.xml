@@ -7,9 +7,9 @@
 	
 	<feature min="0" max="1" name="Cut" type="NONE" id="Cut">
 		<featureGroup min="0" max="3" id="group1">
-			<feature min="0" max="1" name="SimpleCut" type="NONE" id="SimpleCut"></feature>
-			<feature min="0" max="1" name="CommandCut" type="NONE" id="CommandCut"></feature>
-			<feature min="0" max="1" name="requestCut" type="NONE" id="requestCut"></feature>
+			<feature min="0" max="1" name="CutWhatever" type="NONE" id="CutWhatever"></feature>
+			<feature min="0" max="1" name="CutNoDepartment" type="NONE" id="CutNoDepartment"></feature>
+			<feature min="0" max="1" name="CutNoManager" type="NONE" id="CutNoManager"></feature>
 		</featureGroup>		
 	</feature>		
 	
@@ -25,3 +25,4 @@
 <feature min="0" max="1" name="GUI" type="NONE" id="GUI"></feature>	
 	
 </feature>
+

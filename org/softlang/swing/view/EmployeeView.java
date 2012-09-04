@@ -85,7 +85,7 @@ public class EmployeeView extends AbstractView {
 		c.weightx = 1;
 		total.setText(model.getTotal());
 		this.add(total, c);
-		//#end*/
+		/*#end*/
 
 		/*#if($Cut)*/
 		// cut

@@ -92,7 +92,7 @@ public class Controller {
 								Controller.this, "address"));
 						/*#if($Total)*/
 						emp.addSalaryListener(new ChangeListener(Controller.this, "salary"));
-						//#end*/
+						/*#end*/
 						gui = emp;
 					} else {
 						gui = new JPanel();
@@ -114,7 +114,9 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			model.cut();
+			/*#if($Total)*/
 			view.refresh();
+			/*#end*/
 		}
 	}
 	/*#end*/

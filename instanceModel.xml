@@ -6,5 +6,12 @@
 	
 	<feature name="GUI" type="NONE" id="GUI"></feature>		
 	
+	<feature name="Total" type="NONE" id="Total"></feature>	
+	<feature name="TotalReducer" type="NONE" id="TotalReducer"></feature>	
+
+	<feature name="Precedence" type="NONE" id="Precedence"></feature>
+	
+	<feature name="Logging" type="NONE" id="Logging"></feature>	   
+	
 </feature>
 	
