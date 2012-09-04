@@ -1,5 +1,6 @@
 package org.softlang.gui;
 
+import org.softlang.company.factory.BeanFactory;
 import org.softlang.company.factory.PojoFactory;
 import org.softlang.swing.controller.Controller;
 import org.softlang.swing.model.Model;

@@ -74,6 +74,9 @@ public class DepartmentImpl extends ContainerImpl implements Department {
 			if (u instanceof Employee) {
 				Employee e = (Employee)u;
 				if (e.getManager())
+					/*#if($GUI)*/
+					employees.remove(e);
+					/*#end*/
 					return e;
 			}
 		return null;
