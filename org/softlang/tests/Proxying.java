@@ -38,7 +38,7 @@ public class Proxying {
 	}
 	/*#end*/
 	
-	/*#if($AccessControl && $TotalReducer && $SimpleCut)*/
+	/*#if($AccessControl && $TotalReducer && $CutWhatever)*/
 	@Test
 	public void testCut() {
 		Company sampleCompany = Basics.createSampleCompany(new PojoFactory());
@@ -53,7 +53,7 @@ public class Proxying {
 	}
 	/*#end*/
 
-	/*#if($AccessControl && $SimpleCut)*/
+	/*#if($AccessControl && $CutWhatever)*/
 	@Test(expected=IllegalArgumentException.class)
 	public void testCutException() {
 		Company sampleCompany = Basics.createSampleCompany(new PojoFactory());

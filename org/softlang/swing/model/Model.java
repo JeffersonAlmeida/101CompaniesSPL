@@ -1,10 +1,9 @@
 package org.softlang.swing.model;
 
-/*#if($CommandCut)*/
+/*#if($CutNoDepartment)*/
 import org.softlang.command.CutCompany;
 import org.softlang.command.CutEmployee;
 /*#end*/
-
 import org.softlang.company.Company;
 import org.softlang.company.Department;
 import org.softlang.company.Employee;
@@ -12,11 +11,19 @@ import org.softlang.company.factory.BeanFactory;
 import org.softlang.company.factory.Factory;
 import org.softlang.company.factory.PojoFactory;
 
-/*#if($requestCut)*/
+/*#if($Logging)*/
+import org.softlang.features.Logging;
+/*#end*/
+
+/*#if($CutNoManager)*/
 import org.softlang.features.OrderedCut;
 /*#end*/
 
-/*#if($SimpleCut)*/
+/*#if($Precedence)*/
+import org.softlang.features.Precedence;
+/*#end*/
+
+/*#if($CutWhatever)*/
 import org.softlang.features.SimpleCut;
 /*#end*/
 
@@ -27,7 +34,6 @@ import org.softlang.features.TotalReducer;
 /*#if($TotalWalker)*/
 import org.softlang.features.TotalWalker;
 /*#end*/
-
 /**
  * The data model.
  * 
@@ -47,6 +53,14 @@ public class Model {
 			company = (org.softlang.company.impl.pojo.CompanyImpl)createSampleCompany(new PojoFactory());
 		}else if (factory instanceof BeanFactory){
 			company = (org.softlang.company.impl.bean.CompanyImpl)createSampleCompany(new BeanFactory());
+			/*#if($Logging)*/
+			Logging log = new Logging();
+			((org.softlang.company.impl.bean.CompanyImpl)company).addObserver(log);
+			/*#end*/
+			/*#if($Precedence)*/
+			Precedence precedence = new Precedence();
+			((org.softlang.company.impl.bean.CompanyImpl)company).addObserver(precedence);
+			/*#end*/
 		}
 	}
 
@@ -78,11 +92,11 @@ public class Model {
 	 * This method cuts the current company, department or employee.
 	 */
 	public void cut() {
-		/*#if($SimpleCut)*/
+		/*#if($CutWhatever)*/
 		SimpleCut simpleCut = new SimpleCut();
 		simpleCut.postorder(currentValue);
 		//#end*/
-		/*#if($CommandCut)*/
+		/*#if($CutNoDepartment)*/
 		if(currentValue instanceof Company){
 			CutCompany commandCut = new CutCompany((Company) currentValue);
 			commandCut.execute();
@@ -90,7 +104,7 @@ public class Model {
 			new CutEmployee((Employee) currentValue).execute();
 		}
 		//#end*/
-		/*#if($requestCut)*/
+		/*#if($CutNoManager)*/
 		OrderedCut orderedCut = new OrderedCut();
 		orderedCut.postorder(currentValue);
 		//#end*/

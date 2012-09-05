@@ -20,7 +20,7 @@ public class Observability {
 		sampleCompany = (CompanyImpl)Basics.createSampleCompany(new BeanFactory());
 	}
 
-	/*#if($Logging && $SimpleCut)*/
+	/*#if($Logging && $CutWhatever)*/
 	/**
 	 * Test Logging feature
 	 */
@@ -35,7 +35,7 @@ public class Observability {
 	/*#end*/
 	
 	
-	/*#if($Precedence && $requestCut)*/
+	/*#if($Precedence && $CutNoManager)*/
 	/**
 	 * Test Precedence feature
 	 */
@@ -48,7 +48,7 @@ public class Observability {
 	}	
 	 /*#end*/
 	
-	/*#if($Precedence && $SimpleCut)*/
+	/*#if($Precedence && $CutWhatever)*/
 	@Test(expected=IllegalArgumentException.class)
 	public void testPrecedenceException() {
 		Precedence prec = new Precedence();

@@ -2,7 +2,7 @@ package org.softlang.tests;
 
 import org.softlang.company.*;
 import org.softlang.company.factory.*;
-/*#if($TotalReducer || $SimpleCut)*/
+/*#if($TotalReducer || $CutWhatever)*/
 import org.softlang.features.*;
 /*#end*/
 import org.junit.*;
@@ -105,7 +105,7 @@ public class Basics {
 	    /*#end*/
 	}
 
-	/*#if($TotalReducer && $SimpleCut)*/	
+	/*#if($TotalReducer && $CutWhatever)*/	
 	private void testCut(Factory f) {
 		Company sampleCompany = createSampleCompany(f);	
 		TotalReducer total = new TotalReducer();
@@ -117,14 +117,14 @@ public class Basics {
 	}
 	 /*#end*/
 	
-	/*#if($TotalReducer && $SimpleCut)*/	
+	/*#if($TotalReducer && $CutWhatever)*/	
 	@Test
 	public void testCutPojo() {
 		testCut(new PojoFactory());
 	}
 	/*#end*/
 	
-	/*#if($TotalReducer && $SimpleCut)*/	
+	/*#if($TotalReducer && $CutWhatever)*/	
 	@Test
 	public void testCutBean() {
 		testCut(new BeanFactory());
