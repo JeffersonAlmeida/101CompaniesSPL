@@ -140,4 +140,11 @@ public class Basics {
 	public void testTotalBean() {
 		testTotal(new BeanFactory());
 	}
+	
+	/**
+	 * If all class remains empty because variability. 
+	 * We have at least one test in order to compile the class.
+	 */
+	 public void test() {
+	 }
 }

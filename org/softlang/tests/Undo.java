@@ -44,4 +44,11 @@ public class Undo {
 		testUndo(new BeanFactory());
 	}	
 	/*#end*/
+
+	/**
+	 * If all class remains empty because variability. 
+	 * We have at least one test in order to compile the class.
+	 */
+	 public void test() {
+	 }
 }
