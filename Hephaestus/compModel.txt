@@ -58,3 +58,5 @@ CompanyView => org/softlang/swing/view/CompanyView.java;
 DepartmentView => org/softlang/swing/view/DepartmentView.java;
 EmployeeView => org/softlang/swing/view/EmployeeView.java;
 MainView => org/softlang/swing/view/MainView.java;
+Junit => lib/Junit.jar;
+Build => build.xml;

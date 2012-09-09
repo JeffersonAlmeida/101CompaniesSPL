@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns:ivy="antlib:org.apache.ivy.ant" name="hello-ivy" default="dist" basedir=".">
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="hello-ivy" default="ola" basedir=".">
 
 <property name="org" value="org" />
 <property name="build" value="build" />
@@ -38,7 +38,7 @@
 
 <path id="classpath">
 <pathelement path="${dist}/lib/projeto.jar"/>
-<pathelement path="${lib}/junit-4.10.jar"/>
+<pathelement path="${lib}/Junit.jar"/>
 <pathelement path="${build}"/>  
 </path>
 
@@ -58,6 +58,12 @@
 <java classname="org.softlang.gui.Interaction" fork="yes">
 <classpath refid="classpath"/>
 </java>
+</target>
+
+<target name="clean">
+	<delete dir="${build}"/>
+	<delete dir="${dist}"/>
+	<delete dir="${testReport}"/>
 </target>
 
 </project>
