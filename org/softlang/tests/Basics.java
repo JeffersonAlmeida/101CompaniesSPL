@@ -145,6 +145,7 @@ public class Basics {
 	 * If all class remains empty because variability. 
 	 * We have at least one test in order to compile the class.
 	 */
+	 @Test
 	 public void test() {
 	 }
 }

@@ -6,6 +6,7 @@ import org.softlang.company.factory.BeanFactory;
 import org.softlang.features.*;
 /*#end*/
 import org.junit.*;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -52,6 +53,7 @@ public class Observability {
 	 * If all class remains empty because variability. 
 	 * We have at least one test in order to compile the class.
 	 */
+	 @Test
 	 public void test() {
 	 }
 }

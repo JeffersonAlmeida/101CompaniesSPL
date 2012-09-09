@@ -12,6 +12,7 @@ import org.softlang.command.CutCompany;
 /*#end*/
 
 import org.junit.*;
+
 import static org.junit.Assert.assertEquals;
 
 public class Undo {
@@ -49,6 +50,7 @@ public class Undo {
 	 * If all class remains empty because variability. 
 	 * We have at least one test in order to compile the class.
 	 */
+	 @Test
 	 public void test() {
 	 }
 }

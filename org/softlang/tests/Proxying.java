@@ -10,6 +10,7 @@ import org.softlang.proxy.*;
 /*#end*/
 
 import org.junit.*;
+
 import static org.junit.Assert.*;
 
 public class Proxying {
@@ -69,6 +70,7 @@ public class Proxying {
 	 * If all class remains empty because variability. 
 	 * We have at least one test in order to compile the class.
 	 */
+	 @Test
 	 public void test() {
 	 }
 }
