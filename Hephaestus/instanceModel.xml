@@ -1,18 +1,9 @@
 <feature name="JavaExorcismSPL" type="NONE" id="JavaExorcismSPL">
 	
 	<feature name="TreeStructure" type="NONE" id="TreeStructure"></feature>
-
-	<feature name="Precedence" type="NONE" id="Precedence"></feature>
-	<feature name="Logging" type="NONE" id="Logging"></feature>	
-	<feature name="AccessControl" type="NONE" id="AccessControl"></feature>	   	
-	
-	<feature name="Cut" type="NONE" id="Cut"></feature>
-	<feature name="CutWhatever" type="NONE" id="CutWhatever"></feature>	
-	
-	<feature name="Total" type="NONE" id="Total"></feature>	
-	<feature name="TotalReducer" type="NONE" id="TotalReducer"></feature>
-
-	<feature name="GUI" type="NONE" id="GUI"></feature>
+<feature name="Cut" type="NONE" id="Cut"></feature>
+<feature name="CutNoDepartment" type="NONE" id="CutNoDepartment"></feature>	
+<feature name="GUI" type="NONE" id="GUI"></feature>
 
 	
 </feature>

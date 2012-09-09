@@ -14,6 +14,10 @@ import java.util.Observer;
 import org.softlang.util.ObservableSimpleList;
 import org.softlang.util.SimpleLinkedList;
 
+/*#if($GUI)*/
+import java.util.LinkedList;
+import java.util.List;
+/*#end*/
 
 public abstract class ContainerImpl extends ComponentImpl implements Container {
 
