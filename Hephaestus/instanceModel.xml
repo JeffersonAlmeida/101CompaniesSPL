@@ -12,7 +12,7 @@
 	<feature name="Total" type="NONE" id="Total"></feature>	
 	<feature name="TotalReducer" type="NONE" id="TotalReducer"></feature>
 
-	<feature name="GUI" type="NONE" id="GUI"></feature>		
+	<feature name="GUI" type="NONE" id="GUI"></feature>
 
 	<feature name="Testes" type="NONE" id="Testes"></feature>	
 	

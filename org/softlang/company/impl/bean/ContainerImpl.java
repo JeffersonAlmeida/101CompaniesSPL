@@ -28,9 +28,11 @@ public abstract class ContainerImpl extends ComponentImpl implements Container {
 		if (i.getParent()!=null)
 			throw new IllegalArgumentException("Attemped re-parenting.");
 		i.setParent(this);
+		/*#if($GUI)*/
 		if(u instanceof Department){
 			this.depts.add((Department) u);
 		}
+		/*#end*/
 		return subunits.add(u);
 	}
 	
