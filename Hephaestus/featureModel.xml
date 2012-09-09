@@ -3,7 +3,6 @@
 	<feature min="1" max="1" name="TreeStructure" type="NONE" id="TreeStructure"></feature>    
     <feature min="0" max="1" name="Logging" type="NONE" id="Logging"></feature>
     <feature min="0" max="1" name="AccessControl" type="NONE" id="AccessControl"></feature>
-	<feature min="1" max="1" name="Testes" type="NONE" id="Testes"></feature>
 	
 	<feature min="0" max="1" name="Cut" type="NONE" id="Cut">
 		<featureGroup min="0" max="3" id="group1">
@@ -22,7 +21,7 @@
 	
 	<feature min="0" max="1" name="Precedence" type="NONE" id="Precedence"></feature>
 
-<feature min="0" max="1" name="GUI" type="NONE" id="GUI"></feature>	
+	<feature min="0" max="1" name="GUI" type="NONE" id="GUI"></feature>	
 	
 </feature>
 
