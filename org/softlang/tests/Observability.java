@@ -48,13 +48,5 @@ public class Observability {
 	}	
 	 /*#end*/
 	
-	/*#if($Precedence && $CutWhatever)*/
-	@Test(expected=IllegalArgumentException.class)
-	public void testPrecedenceException() {
-		Precedence prec = new Precedence();
-		((CompanyImpl)sampleCompany).addObserver(prec);
-		SimpleCut cut = new SimpleCut();
-		cut.postorder(sampleCompany);
-	}	
-	/*#end*/
+	
 }
