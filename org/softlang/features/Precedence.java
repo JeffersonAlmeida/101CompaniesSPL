@@ -18,28 +18,28 @@ public class Precedence implements Observer {
 				if (!e.getManager()) {
 					// An employee must have a smaller salary than the manager of the department.
 					if (e.getSalary() >= d.getManager().getSalary())
-						throw exception(e);
+						exception(e);
 				} else {
 					// A manager of the upper department, if any, must have a greater salary.
 					if (d.getParent()!=null && d.getParent() instanceof DepartmentImpl)
 						if (e.getSalary() >= ((DepartmentImpl)(d.getParent())).getManager().getSalary())
-							throw exception(e);
+							 exception(e);
 					// All managed employees must have smaller salaries.
 					// For sub-departments, the manager is tested only.
 					for (Subunit u : d.subunits())
 						if (u instanceof DepartmentImpl) {
 							if (((DepartmentImpl)u).getManager().getSalary() >= e.getSalary())
-								throw exception(e);								
+								 exception(e);								
 						} else {
 							if (u!=e && ((EmployeeImpl)u).getSalary() >= e.getSalary())
-								throw exception(e);								
+								 exception(e);								
 						}
 				}
 			}
 		}
 	}
 	
-	private RuntimeException exception(Employee e) {
-		return new IllegalArgumentException("Precedence constraint violated for employee \"" + e.getName() + "\".");
+	private void exception(Employee e) {
+		System.out.println("Precedence constraint violated for employee \"" + e.getName() + "\".");
 	}
 }
