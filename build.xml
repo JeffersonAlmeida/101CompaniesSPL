@@ -66,4 +66,8 @@
 	<delete dir="${testReport}"/>
 </target>
 
+<target name="cleanProduct">
+	<delete dir="."/>
+</target>
+
 </project>

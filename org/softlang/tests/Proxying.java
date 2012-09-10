@@ -2,7 +2,7 @@ package org.softlang.tests;
 
 import org.softlang.company.*;
 import org.softlang.company.factory.PojoFactory;
-/*#if($Cut || $Total || $AccessControl)*/
+/*#if($Cut || $Total || ($AccessControl && $TotalReducer) || ($AccessControl && $CutWhatever))*/
 import org.softlang.features.*;
 /*#end*/
 /*#if($AccessControl)*/
