@@ -2,7 +2,10 @@ package org.softlang.company.impl.bean;
 
 import org.softlang.company.Company;
 import org.softlang.visitor.ReturningVisitor;
+
+/*#if($Cut || $Total)*/
 import org.softlang.visitor.VoidVisitor;
+/*#end*/
 
 public class CompanyImpl extends ContainerImpl implements Company {
 	
