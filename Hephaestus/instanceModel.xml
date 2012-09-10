@@ -3,7 +3,6 @@
 <feature name="TreeStructure" type="NONE" id="TreeStructure"></feature>
 <feature name="Cut" type="NONE" id="Cut"></feature>
 <feature name="CutNoDepartment" type="NONE" id="CutNoDepartment"></feature>	
-<feature name="GUI" type="NONE" id="GUI"></feature>
 
 </feature>
 	
