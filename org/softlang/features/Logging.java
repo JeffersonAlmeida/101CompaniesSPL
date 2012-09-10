@@ -18,8 +18,10 @@ public class Logging implements Observer {
 		if (o instanceof EmployeeImpl && arg instanceof String) {
 			EmployeeImpl e = (EmployeeImpl)o;
 			if (((String)arg).equals("salary")) {
-				size++;
-				System.out.println("Salary of " + e.getName() + " adjusted to " + e.getSalary());
+				if((e.getOldSalary()!=e.getSalary())){
+					size++;
+					System.out.println("Salary of " + e.getName() + " adjusted to " + e.getSalary());
+				}
 			}
 		}
 	}

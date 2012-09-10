@@ -12,6 +12,16 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 	private String address;
 	private double salary;
 	private boolean manager;
+	
+	/*#if($Precedence)*/
+	private double oldSalary;
+	public double getOldSalary() {
+		return oldSalary;
+	}
+	public void setOldSalary(double oldSalary) {
+		this.oldSalary = oldSalary;
+	}
+	/*#end*/
 
 	public String getName() {
 		return name;
@@ -42,12 +52,21 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 	}
 
 	public void setSalary(double salary) {
-		this.salary = salary;
-		/*#if($Logging || $Precedence)*/
- 		setChanged();
- 		notifyObservers("salary");
-	    /*#end*/
+		if(salary!=this.getSalary()){
+			/*#if($Precedence)*/
+			this.oldSalary = this.salary; 
+			/*#end*/
+			this.salary = salary;
+			/*#if($Logging || $Precedence)*/
+	 		setChanged();
+	 		notifyObservers("salary");
+		    /*#end*/
+		}	
 	}	
+	
+	public void setSalaryWithOldSalary(){
+		this.salary = this.oldSalary;
+	}
 	
 	public boolean getManager() {
 		return manager;
@@ -84,4 +103,5 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 		return treeName;
 	}
 	/*#end*/
+
 }

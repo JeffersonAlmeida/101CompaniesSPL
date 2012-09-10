@@ -21,6 +21,8 @@ public class Precedence implements Observer {
 						try {
 							throw exception(e);
 						} catch (Exception e1) {
+							e.setSalaryWithOldSalary();
+							e.setOldSalary(e.getSalary());
 							System.out.println(e1.getMessage());
 						}
 				} else {
@@ -30,6 +32,8 @@ public class Precedence implements Observer {
 							try {
 								throw exception(e);
 							} catch (Exception e1) {
+								e.setSalaryWithOldSalary();
+								e.setOldSalary(e.getSalary());
 								System.out.println(e1.getMessage());
 							}
 					// All managed employees must have smaller salaries.
@@ -40,6 +44,8 @@ public class Precedence implements Observer {
 								try {
 									throw exception(e);
 								} catch (Exception e1) {
+									e.setSalaryWithOldSalary();
+									e.setOldSalary(e.getSalary());
 									System.out.println(e1.getMessage());
 								}								
 						} else {
@@ -47,6 +53,8 @@ public class Precedence implements Observer {
 								try {
 									throw exception(e);
 								} catch (Exception e1) {
+									e.setSalaryWithOldSalary();
+									e.setOldSalary(e.getSalary());
 									System.out.println(e1.getMessage());
 								}								
 						}

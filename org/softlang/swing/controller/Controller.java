@@ -148,5 +148,6 @@ public class Controller {
 	 */
 	public void salaryChanged(String newValue) {
 		model.setSalary(newValue);
+		view.refresh();
 	}
 }
