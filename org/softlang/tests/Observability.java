@@ -2,7 +2,7 @@ package org.softlang.tests;
 
 import org.softlang.company.impl.bean.CompanyImpl;
 import org.softlang.company.factory.BeanFactory;
-/*#if($Logging || $Cut || $Total || $Precedence)*/
+/*#if( ($Logging && $CutWhatever) || ($Precedence && $CutNoManager))*/
 import org.softlang.features.*;
 /*#end*/
 import org.junit.*;

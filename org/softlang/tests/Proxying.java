@@ -2,7 +2,7 @@ package org.softlang.tests;
 
 import org.softlang.company.*;
 import org.softlang.company.factory.PojoFactory;
-/*#if($Cut || $Total || ($AccessControl && $TotalReducer) || ($AccessControl && $CutWhatever))*/
+/*#if(($AccessControl && $TotalReducer) || ($AccessControl && $CutWhatever))*/
 import org.softlang.features.*;
 /*#end*/
 /*#if($AccessControl)*/
@@ -45,8 +45,8 @@ public class Proxying {
 		Company sampleCompany = Basics.createSampleCompany(new PojoFactory());
 		AccessControl ac = new AccessControl();
 		sampleCompany = ac.deploy(sampleCompany);
-		TotalReducer total = new TotalReducer();
-		SimpleCut cut = new SimpleCut();
+		org.softlang.features.TotalReducer total = new org.softlang.features.TotalReducer();
+		org.softlang.features.SimpleCut cut = new org.softlang.features.SimpleCut();
 		double before = total.reduce(sampleCompany);
 		cut.postorder(sampleCompany);
 		double after = total.reduce(sampleCompany);
