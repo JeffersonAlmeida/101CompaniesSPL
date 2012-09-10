@@ -8,6 +8,11 @@ import org.softlang.features.*;
 import org.junit.*;
 import static org.junit.Assert.*;
 
+/*#if($TotalWalker)*/
+import org.softlang.features.TotalWalker;
+/*#end*/
+
+
 /**
  * Test/demonstrate basic operations for totaling and cutting salaries.
  */
