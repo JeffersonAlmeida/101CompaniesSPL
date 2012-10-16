@@ -64,9 +64,11 @@ public class EmployeeImpl extends ComponentImpl implements Employee {
 		}	
 	}	
 	
+	/*#if($Precedence)*/
 	public void setSalaryWithOldSalary(){
 		this.salary = this.oldSalary;
 	}
+	/*#end*/
 	
 	public boolean getManager() {
 		return manager;
