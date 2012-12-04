@@ -1,6 +1,8 @@
 package org.softlang.tests;
 
 import org.softlang.company.*;
+import org.softlang.company.factory.BeanFactory;
+import org.softlang.company.factory.Factory;
 import org.softlang.company.factory.PojoFactory;
 /*#if(($AccessControl && $TotalReducer) || ($AccessControl && $CutWhatever))*/
 import org.softlang.features.*;
@@ -24,6 +26,23 @@ public class Proxying {
 		sampleCompany = ac.deploy(sampleCompany);
 		TotalReducer reducer = new TotalReducer();
 	    assertEquals(399747, reducer.reduce(sampleCompany), 0);
+	}
+	/*#end*/
+	
+	/*#if($AccessControl && $TotalReducer)*/
+	@Test
+	public void testEmployeeAccessControl(){
+		AccessControl ac = new AccessControl();
+		ac.disableWriteAcccess();
+		ac.disableReadAcccess();
+		Factory f = new PojoFactory();
+	    Employee ralf = f.mkEmployee();
+		ralf.setName("Ralf");
+		ralf.setAddress("Koblenz");
+		ralf.setSalary(1234);	
+		Employee e = ac.deploy(ralf);
+		e.setSalary(4321);	
+		assertEquals(1234, e.getSalary(),0);
 	}
 	/*#end*/
 
